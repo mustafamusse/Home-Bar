@@ -7,7 +7,7 @@ function App(props) {
     {/*<Route>
       
   </Route>*/}
-    
+     
       <div className='w-screen h-screen bg-blue-500'>
       <span className="p-10 text-sm bg-red-500 block">Hej</span>
       <span>{props.doSearch("vodka")}</span> 
