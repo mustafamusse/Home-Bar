@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import './Styles/globals.css'
+import  "./cocktailModel.js"
+import doSearch from "./cocktailModel.js"
+import Route from "react-router-dom"
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Route>
+      
+    </Route>
+    
+      <div className='w-screen h-screen bg-blue-500'>
+      <span className="p-10 text-sm bg-red-500 block">Hej</span>
+      <span>{/*props.doSearch("vodka")*/}</span> 
+      <div className="w-[300px] h-[500px] bg-blue-500"></div>
+      </div>
+    </>
   );
 }
-
+ 
 export default App;
