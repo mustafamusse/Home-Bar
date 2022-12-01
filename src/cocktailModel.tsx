@@ -2,8 +2,9 @@ import resolvePromise from "./resolvePromise";
 import {searchCocktailByName} from "./cocktailSource.js"
 
 class cocktailModel{
-    constructor(currentDrinkName){
-        this.seatcurrentDrinkNameState = {};
+    searchResultsPromiseState: {};
+        constructor(){
+        this.searchResultsPromiseState = {};
     }
 
     doSearch(params) {
