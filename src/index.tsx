@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './Styles/globals.css'
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
+import cocktailModel from "./cocktailModel"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div className={"bg-transparent w-full "}>
-    <App />
+    <App model ={cocktailModel} />
   </div>
 );
 

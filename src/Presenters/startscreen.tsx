@@ -1,5 +1,9 @@
 import StartScreen from "../Views/startscreen.js"
 
-function startscreen(props) {
-    <StartScreen>
-}
+/*function startscreen(props) {
+    return(
+        <>
+        <StartScreen>
+        </>
+    )
+}*/
