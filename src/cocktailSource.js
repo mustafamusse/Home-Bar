@@ -3,7 +3,7 @@ import { BASE_URL, API_KEY } from "./apiConfig.js";
 function treatHTTPResponseACB(response) {
     if (!response.ok) {
         throw new Error("API problem " + response.status);
-    }         console.log(response)
+    }
     return response.json();
 }
 

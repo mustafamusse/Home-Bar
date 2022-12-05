@@ -6,13 +6,12 @@ class cocktailModel{
         this.searchResultsPromiseState = {};
     }
     doSearch(params) {
-        console.log(params)
          this.searchResultsPromiseState.promise = searchCocktailByName(params)
          resolvePromise(this.searchResultsPromiseState.promise, this.searchResultsPromiseState)
-         console.log(this.searchResultsPromiseState.data)
+         /*console.log(this.searchResultsPromiseState.data)
          console.log(this.searchResultsPromiseState.error)
          console.log(this.searchResultsPromiseState.promise)
-   //   console.log(searchCocktailByName(params))
+   //   console.log(searchCocktailByName(params))*/
      }
 }
 
