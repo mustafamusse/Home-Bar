@@ -9,10 +9,10 @@ module.exports = {
         'dark-red': '#420C14',
         'neutral': '#DBD3D8',
       },
+      fontFamily: {
+        'Alata' : ["Alata"]
+      },
     },
-  },
-  fontFamily: {
-    'Alata' : ["Alata"]
   },
   plugins: [],
   content: ["./src/**/*.{js,jsx,ts,tsx,html}", "./public/index.html"],
