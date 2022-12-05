@@ -3,7 +3,7 @@ import MyIngredientsPresenter from "./reactjs/myIngredientsPresenter";
 
 function App() {
   return (
-    <MyIngredientsPresenter/>
+    <LoginPresenter/>
   );
 }
 
