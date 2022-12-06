@@ -78,7 +78,7 @@ function myIngredientsView() {
           </span>
         </div>
         <div className="fixed mt-[20vh] w-screen h-[10vh] flex justify-center items-center bg-neutral">
-          <a href='#add_igredients' className="w-[250px] h-[50px] rounded-2xl bg-light-red text-white shadow-lg text-xl flex justify-center items-center">
+          <a href='#add_ingredients' className="w-[250px] h-[50px] rounded-2xl bg-light-red text-white shadow-lg text-xl flex justify-center items-center">
             <span>Add new ingredients</span>
           </a>
         </div>

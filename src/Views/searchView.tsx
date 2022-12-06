@@ -1,5 +1,14 @@
 
-function SearchView() {
+function searchView(props : any) {
+
+  function setInputACB(evt : any){
+    props.onInputChange(evt.target.value);  
+  }
+
+  function searchACB(){
+    props.onSearchClick()
+  }
+
     return (
         <>
         {/* MOBILE SCREEN */}
@@ -7,8 +16,10 @@ function SearchView() {
             <span className="text-2xl text-black py-8">
             Search for your Cocktail
             </span>
-            <input className="border-2 border-black text-center" type="text" placeholder="Search here">
+            <input onChange={setInputACB} className="border-2 border-black text-center" type="text" placeholder="Search here">
             </input>
+            {/*GÖR SNYGGT?*/}
+            <button onClick={searchACB}> search</button>
         </section>
         
         {/* DESKTOP SCREEN */}
@@ -19,4 +30,4 @@ function SearchView() {
     );
   }
   
-  export default SearchView;
+  export default searchView;

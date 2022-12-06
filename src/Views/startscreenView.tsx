@@ -21,7 +21,7 @@ function StartscreenView() {
             </input>
             To uncomment, remove the curlybrackets*/}         
             </a>
-            <a href='#Search' className="rounded-2xl bg-light-red text-white text-xl justify-center px-3 py-0.5">
+            <a href="#search" className="rounded-2xl bg-light-red text-white text-xl justify-center px-3 py-0.5">
             <span>Search drink</span>
             </a>
 

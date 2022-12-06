@@ -8,9 +8,8 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.8",
     "@types/node": "^17.0.45",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
     "autoprefixer": "^10.4.13",
+    "firebase": "^9.14.0",
     "postcss": "^8.4.19",
     "postcss-cli": "^9.1.0",
     "postcss-preset-env": "^7.8.3",
@@ -40,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9"
   }
 }

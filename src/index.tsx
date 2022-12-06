@@ -3,10 +3,11 @@ import "./styles/tailwind.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import React from 'react';
+import cocktailModel from './cocktailModel';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <App model = {new cocktailModel} />
   </React.StrictMode>
 )
 

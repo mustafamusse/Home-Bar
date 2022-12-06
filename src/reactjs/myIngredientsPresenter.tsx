@@ -1,7 +1,7 @@
 import MyIngredientsView from "../Views/myIngredientsView"
 
 export default
-function myIngredientsPresenter(){
+function myIngredientsPresenter(props : any){
 
     return(
         <>

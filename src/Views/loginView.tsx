@@ -1,6 +1,11 @@
 
 
-function loginView() {
+function loginView(props : any) {
+
+  /*NEEDS TO TRIGGER ON CLICK AND SEND LOGIN CREDENTIALS AS EVENT TARGET */
+  function logInClickACB(evt : any){
+    props.logInRequest(evt.target.value)
+  }
     return (
         <>
         {/* MOBILE SCREEN */}
@@ -9,7 +14,7 @@ function loginView() {
             HomeBar
             </span>
             <img src="./drink-icon.png" className="w-[65%] md:w-[30%] 2xl:w-[20%]"></img>
-            <a href='#login' className="w-[150px] h-[40px] rounded-2xl bg-light-red text-white text-xl flex justify-center items-center">
+            <a href="#login" className="w-[150px] h-[40px] rounded-2xl bg-light-red text-white text-xl flex justify-center items-center">
             <span>Log in</span>
             </a>
             <a  href='#register' className="flex flex-col justify-center items-center text-lg hover:underline">

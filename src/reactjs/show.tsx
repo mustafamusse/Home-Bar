@@ -1,8 +1,7 @@
 import React from "react";
-/*
 export default
 
-function Show (props) {
+function Show (props : any) {
 
     const [hashState , setHash] = React.useState(window.location.hash)
 
@@ -19,9 +18,9 @@ function Show (props) {
     }
     React.useEffect(componentWasCreatedACB, [] );
    
-    return (
-    <div className={hashState==props.hash ? '' : 'hidden'}> {props.children} </div>
-    )
-}
+    function checkHashState() {
+        if (hashState === props.hash) return {"display":""}; else return {"display" : "none"}
+    }
 
-*/
+    return <div style={checkHashState()}>{props.children}</div>;
+}
