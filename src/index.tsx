@@ -6,7 +6,7 @@ import React from 'react';
 import cocktailModel from './cocktailModel';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <React.StrictMode> 
     <App model = {new cocktailModel} />
   </React.StrictMode>
 )
