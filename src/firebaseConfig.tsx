@@ -1,16 +1,12 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA8AWj2GBo89CxCVy6P6FGCXQ9N-HU32eo",
-  authDomain: "home-bar-db.firebaseapp.com",
-  projectId: "home-bar-db",
-  storageBucket: "home-bar-db.appspot.com",
-  messagingSenderId: "169286610140",
-  appId: "1:169286610140:web:6373b85465d649b3b51819"
+  apiKey: "AIzaSyCcqfFQARGpmNJlc8W2aVINRMbuoEX4dNQ",
+  authDomain: "home-bar-db-27f75.firebaseapp.com",
+  databaseURL: "https://home-bar-db-27f75-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "home-bar-db-27f75",
+  storageBucket: "home-bar-db-27f75.appspot.com",
+  messagingSenderId: "230629293783",
+  appId: "1:230629293783:web:a792b83b0ed008687aba92"
 };
 
 export default firebaseConfig;
