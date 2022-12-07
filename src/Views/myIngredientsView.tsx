@@ -81,7 +81,7 @@ function myIngredientsView() {
           </a>
         </div>
         <div className="fixed mt-[85vh] w-screen h-[15vh] flex justify-center items-center bg-neutral border-t-2 border-dark-red">
-          <a href='#Search' className="w-[250px] h-[50px] rounded-3xl bg-dark-red text-white text-xl flex justify-center items-center">
+          <a href='#search' className="w-[250px] h-[50px] rounded-3xl bg-dark-red text-white text-xl flex justify-center items-center">
             <span>Back to Search</span>
           </a>
         </div>
@@ -90,8 +90,8 @@ function myIngredientsView() {
           {dummyIngredients.map((ingredient) => (
             <div className="w-full flex justify-between">
               <div key={ingredient.name}>{ingredient.name}</div>
-              <div className="w-6 h-6 bg-white flex items-center justify-center rounded-[0.5rem]">
-                <button className="w-6 h-6 text-gray-800 text-base" onClick={removeIngredientsACB}>X</button>
+              <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
+                <button className="w-fit h-fit text-white text-base font-medium" onClick={removeIngredientsACB}>Remove</button>
               </div>
             </div>
           ))}
