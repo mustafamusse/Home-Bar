@@ -1,5 +1,6 @@
 import LoginPresenter from "./reactjs/loginPresenter";
 import MyIngredientsPresenter from "./reactjs/myIngredientsPresenter";
+import AddIngredientsPresenter from "./reactjs/addIngredientsPresenter";
 import StartscreenPresenter from "./reactjs/startscreenPresenter";
 import SearchPresenter from "./reactjs/searchPresenter";
 import Show from "./reactjs/show";
@@ -8,11 +9,11 @@ import Show from "./reactjs/show";
 function App(props: any) {
   //  return <div style={{"display" : "none"}}><LoginPresenter model={props.model} /></div>
   return (<div>
-    <LoginPresenter model={props.model} />
+    <Show hash="#login"><LoginPresenter model={props.model} /> </Show>
     <Show hash="#search"> <SearchPresenter model={props.model} /> </Show>
     <Show hash="#start"> <StartscreenPresenter model={props.model} /> </Show>
     <Show hash="#ingredients"> <MyIngredientsPresenter model={props.model} /> </Show>
-    <Show hash="#add_ingredients"> <MyIngredientsPresenter model={props.model} /* TODO create add_ingredients presenter/view */ /> </Show>
+    <Show hash="#add_ingredients"> <AddIngredientsPresenter model={props.model}/> </Show> 
   </div>)
 
 }

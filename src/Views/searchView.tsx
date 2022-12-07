@@ -12,14 +12,19 @@ function searchView(props : any) {
     return (
         <>
         {/* MOBILE SCREEN */}
-        <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral h-screen w-screen font-Alata">
+        <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral w-screen font-Alata">
             <span className="text-2xl text-black py-8">
             Search for your Cocktail
             </span>
-            <input onChange={setInputACB} className="border-2 border-black text-center" type="text" placeholder="Search here">
+            <input onChange={setInputACB} className="border-2 border-black text-center pb-3.5" type="text" placeholder="Search here">
             </input>
-            {/*GÖR SNYGGT?*/}
-            <button onClick={searchACB}> search</button>
+
+            <button onClick={searchACB} className="rounded-2xl bg-light-red text-white text-xl justify-center px-3">Search</button>
+            
+            <a href="#ingredients" className="w-[150px] h-[40px] rounded-2xl bg-light-red text-white text-xl flex justify-center items-center">
+            <span>Add ingredients</span>
+            </a>
+
         </section>
         
         {/* DESKTOP SCREEN */}
