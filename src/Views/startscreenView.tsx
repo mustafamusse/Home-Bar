@@ -1,10 +1,47 @@
-import coctailglass from "../../public/coctailglass.png"
+
+
+const dummyRecommendedDrinks = [
+  {
+    title: "Vodka redbull",
+    image: "./cocktail.png"
+  },
+  {
+    title: "Martini",
+    image: "./cocktail.png"
+  },
+  {
+    title: "TITLE",
+    image: "./cocktail.png"
+  },
+  {
+    title: "TITLE",
+    image: "./cocktail.png"
+  },
+  {
+    title: "TITLE",
+    image: "./cocktail.png"
+  },
+  {
+    title: "TITLE",
+    image: "./cocktail.png"
+  },
+  {
+    title: "TITLE",
+    image: "./cocktail.png"
+  },
+  {
+    title: "TITLE",
+    image: "./cocktail.png"
+  },
+]
+
+
 
 function StartscreenView() {
     return (
         <>
         {/* MOBILE SCREEN */}
-        <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral h-screen w-screen font-Alata">
+        <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral h-200vh w-screen font-Alata">
             <span className="text-2xl text-black pt-8">
             Welcome to Home Bar!
             </span>
@@ -29,41 +66,16 @@ function StartscreenView() {
             Or choose a one of our most popular drinks
             </span>
             
-            <div className="py-8 grid grid-cols-2 gap-12 content-start">
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
-              <div>
-                <div className="border-2 border-black text-center py-4">image</div>
-                <div>Title of image</div>
-              </div>
+            <div className="py-8 w-full content-center">
+                <div className="grid grid-cols-2 pt-8 justify-between"> 
+                  {dummyRecommendedDrinks.map((drink) => (
+                  <div className="flex flex-col pt-8 items-center text-center">
+                    <img src={drink.image} className="w-100 h-40"></img>
+                    <div key={drink.title}>{drink.title}</div>
+                  </div>
+                ))}
+                </div>
             </div>
-
         </section>
         
         {/* DESKTOP SCREEN */}
