@@ -8,8 +8,8 @@ import Show from "./reactjs/show";
 function App(props: any) {
 //  return <div style={{"display" : "none"}}><LoginPresenter model={props.model} /></div>
   return (<div>
+    <LoginPresenter model={props.model} />
     <Show hash="#search"> <SearchPresenter model={props.model} /> </Show>
-    <Show hash="#login"> <LoginPresenter model={props.model} /> </Show>
     <Show hash="#start"> <StartscreenPresenter model={props.model} /> </Show>
     <Show hash="#ingredients"> <MyIngredientsPresenter model={props.model} /> </Show>
     <Show hash="#add_ingredients"> <MyIngredientsPresenter model={props.model} /* TODO create add_ingredients presenter/view */  /> </Show> 
