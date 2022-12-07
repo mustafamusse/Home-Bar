@@ -7,7 +7,7 @@ import Show from "./reactjs/show";
 
 /*VIEWS SHOULD PROBABLY NOT BE RENDERED UNTIL LOGIN IS COMPLETED*/
 function App(props: any) {
-//  return <div style={{"display" : "none"}}><LoginPresenter model={props.model} /></div>
+  //  return <div style={{"display" : "none"}}><LoginPresenter model={props.model} /></div>
   return (<div>
     <Show hash="#login"><LoginPresenter model={props.model} /> </Show>
     <Show hash="#search"> <SearchPresenter model={props.model} /> </Show>
@@ -15,7 +15,7 @@ function App(props: any) {
     <Show hash="#ingredients"> <MyIngredientsPresenter model={props.model} /> </Show>
     <Show hash="#add_ingredients"> <AddIngredientsPresenter model={props.model}/> </Show> 
   </div>)
-  
+
 }
 
 export default App;
