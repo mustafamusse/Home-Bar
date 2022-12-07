@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import React from 'react';
 import cocktailModel from './cocktailModel';
 
+import "./Views/navigation.js"
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode> 
     <App model = {new cocktailModel} />

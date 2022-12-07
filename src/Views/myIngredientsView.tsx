@@ -25,46 +25,28 @@ function myIngredientsView() {
       name: 'Gin',
     },
     {
-      name: 'Ice',
+      name: 'Milk',
     },
     {
-      name: 'Absolut Vodka',
+      name: 'Redbull',
     },
     {
-      name: 'Candy',
+      name: 'Powerking',
     },
     {
-      name: 'Jaeger Meister',
+      name: 'Apple',
     },
     {
-      name: 'Lemon',
+      name: 'Pear',
     },
     {
-      name: 'Water',
+      name: 'Fireball',
     },
     {
-      name: 'Gin',
+      name: 'Fish',
     },
     {
-      name: 'Ice',
-    },
-    {
-      name: 'Absolut Vodka',
-    },
-    {
-      name: 'Candy',
-    },
-    {
-      name: 'Jaeger Meister',
-    },
-    {
-      name: 'Lemon',
-    },
-    {
-      name: 'Water',
-    },
-    {
-      name: 'Gin',
+      name: 'Sours',
     },
   ]
 
