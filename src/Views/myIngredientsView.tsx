@@ -2,6 +2,10 @@
 
 function myIngredientsView() {
 
+  function removeIngredientsACB(){
+
+  }
+
   const dummyIngredients = [
     {
       name: 'Ice',
@@ -84,8 +88,12 @@ function myIngredientsView() {
         <div className="flex flex-col items-start w-screen h-fit pb-[20vh] text-xl font-semibold bg-neutral ">
           <div className="mt-[25vh] px-10 pt-8 w-full"> 
           {dummyIngredients.map((ingredient) => (
-            <div key={ingredient.name}>{ingredient.name}</div>
-            
+            <div className="w-full flex justify-between">
+              <div key={ingredient.name}>{ingredient.name}</div>
+              <div className="w-6 h-6 bg-white flex items-center justify-center rounded-[0.5rem]">
+                <button className="w-6 h-6 text-gray-800 text-base" onClick={removeIngredientsACB}>X</button>
+              </div>
+            </div>
           ))}
           </div>
         </div>
