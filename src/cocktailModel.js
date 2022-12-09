@@ -1,29 +1,28 @@
-import resolvePromise from "./resolvePromise"
-import { searchCocktailByName } from "./cocktailSource"
+import {existsInArray} from "./utils"
 
 class cocktailModel {
-    constructor() {
+    constructor(savedIngr = []) {
         this.observers = [];
-        this.searchParams = {};
-        this.searchResultsPromiseState=searchCocktailByName("");
-   //     this.searchResultsPromiseState.promise = {};
-   //     this.searchResultsPromiseState.data = {};
-    //   this.searchResultsPromiseState.error = {};
+        this.mySavedIngredients = savedIngr;
     }
 
     setSearchQuery(q) {
         this.searchParams.query = q;
     }
 
-    doSearch(params) {
-        function notifyACB() {
-            this.notifyObservers();  // no payload 
+    addToIngrList(ingrToAdd) {
+        if (!existsInArray(this.mySavedIngredients, ingrToAdd))
+            this.mySavedIngredients = [...this.mySavedIngredients, ingrToAdd]
+        this.notifyObservers({newIngredient : ingrToAdd});
+    }
+
+    removeIngredient(item){
+        function isNotSame(obs) {
+            if (obs.id != item.id)
+                return true;
         }
-        this.searchResultsPromiseState.promise = searchCocktailByName(params)
-        console.log(this.searchResultsPromiseState)
-        resolvePromise(this.searchResultsPromiseState.promise, this.searchResultsPromiseState, notifyACB.bind(this))
-        console.log("promise.data is:")
-        console.log(this.searchResultsPromiseState)
+        this.mySavedIngredients = this.mySavedIngredients.filter(isNotSame)
+        this.notifyObservers({removedIngredient : item});
     }
 
     addObserver(cb) {

@@ -1,43 +1,41 @@
-import LoginView from "../Views/loginView"
 import SearchView from "../Views/searchView"
 import SearchResultsView from "../Views/searchResultsView"
 import promiseNoData from "../Views/promiseNoData"
 import React from "react";
+import { searchCocktailByName } from "../cocktailSource";
+import resolvePromise from "../resolvePromise";
+
 export default
     function SearchPresenter(props) {
-    const [, cpyError] = React.useState(props.model.searchResultsPromiseState.error)
-    const [, cpyData] = React.useState(props.model.searchResultsPromiseState.data)
-    const [, cpyPromise] = React.useState(props.model.searchResultsPromiseState.promise)
+    const [searchQuery, setQuery] = React.useState({});
+    const [searchResultsPromiseState] = React.useState({});
+    const [, reRender] = React.useState();
 
-    function observerACB() {
-        cpyError(props.model.searchResultsPromiseState.error)
-        cpyData(props.model.searchResultsPromiseState.data)
-        cpyPromise(props.model.searchResultsPromiseState.promise)
+    function componentWasCreatedACB() { 
+        console.log("component created!");
+        searchResultsPromiseState.promise = searchCocktailByName("")
+         resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
     }
 
-    function wasCreatedACB() {
-        props.model.addObserver(observerACB);
-        return function isTakenDownACB() { props.model.removeObserver(observerACB) };
+    React.useEffect(componentWasCreatedACB, []); 
+
+    function setQueryACB(text) {
+        setQuery(text)
     }
-    React.useEffect(wasCreatedACB, []);
-
-
-    if (!props.model.searchResultsPromiseState.promise)
-        props.model.doSearch("")
-
-    function onTextEventHandlerACB(text) {
-        props.model.setSearchQuery(text)
+    function doSearchACB() {
+        searchResultsPromiseState.promise = searchCocktailByName({ query: searchQuery })
+        resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
     }
 
-    function searchEventHandlerACB() {
-        props.model.doSearch(props.model.searchParams)
+    function promiseChangeNotificationACB() {
+        reRender(new Object())
     }
 
     return (
         <div>
-            <SearchView onInputChange={onTextEventHandlerACB} onSearchClick={searchEventHandlerACB} />
-            {promiseNoData(props.model.searchResultsPromiseState) ||
-                <SearchResultsView searchResults={props.model.searchResultsPromiseState.data} />}
+            <SearchView onInputChange={setQueryACB} onSearchClick={doSearchACB} />
+            {promiseNoData(searchResultsPromiseState) ||
+                <SearchResultsView searchResults={searchResultsPromiseState.data} />}
         </div>
     )
 }

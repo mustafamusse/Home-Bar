@@ -6,6 +6,9 @@ import React from 'react';
 import cocktailModel from './cocktailModel';
 
 import "./Views/navigation.js"
+import ReactRoot from './reactjs/ReactRoot';
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode> 
     <App model = {new cocktailModel} />

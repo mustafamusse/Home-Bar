@@ -1,73 +1,12 @@
+function myIngredientsView(props: any) {
 
-
-function myIngredientsView() {
-
-  function removeIngredientsACB(){
-
+  function removeIngredientsACB(e : any) {
+    console.log({id : e.target.id, name: e.target.name})
+    props.removeIngr({id : e.target.id, name: e.target.name});
   }
 
-  const dummyIngredients = [
-    {
-      name: 'Ice',
-    },
-    {
-      name: 'Absolut Vodka',
-    },
-    {
-      name: 'Candy',
-    },
-    {
-      name: 'Jaeger Meister',
-    },
-    {
-      name: 'Lemon',
-    },
-    {
-      name: 'Water',
-    },
-    {
-      name: 'Gin',
-    },
-    {
-      name: 'Milk',
-    },
-    {
-      name: 'Redbull',
-    },
-    {
-      name: 'Powerking',
-    },
-    {
-      name: 'Apple',
-    },
-    {
-      name: 'Pear',
-    },
-    {
-      name: 'Fireball',
-    },
-    {
-      name: 'Fish',
-    },
-    {
-      name: 'Sours',
-    },
-    {
-      name: 'Coca Cola',
-    },
-    {
-      name: 'Sprite',
-    },
-    {
-      name: 'Schweppes',
-    },
-    {
-      name: 'Sugar',
-    },
-  ]
-
-    return (
-      <>
+  return (
+    <>
       {/* MOBILE SCREEN */}
       <section id="mobileScreen" className="lg:hidden font-Alata">
         <div className="bg-neutral fixed w-screen h-[15vh]">
@@ -86,26 +25,29 @@ function myIngredientsView() {
           </a>
         </div>
         <div className="flex flex-col items-start w-screen h-fit pb-[20vh] text-xl font-semibold bg-neutral ">
-          <div className="mt-[25vh] px-10 pt-8 w-full"> 
-          {dummyIngredients.map((ingredient) => (
-            <div className="w-full flex justify-between">
-              <div key={ingredient.name}>{ingredient.name}</div>
-              <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
-                <button className="w-fit h-fit text-white text-base font-medium" onClick={removeIngredientsACB}>Remove</button>
+          <div className="mt-[25vh] px-10 pt-8 w-full">
+            {props.ingrList.map((ingredient : any) => (
+              <div className="w-full flex justify-between">
+                <div key={ingredient.id}>{ingredient.name}</div>
+                <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
+                  <button className="w-fit h-fit text-white text-base font-medium" 
+                  id={ingredient.id}
+                  name={ingredient.name}
+                  onClick={removeIngredientsACB}>Remove</button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
-        
+
       </section>
 
       {/* DESKTOP SCREEN */}
       <section id="desktopScreen" className="hidden lg:flex w-screen h-screen justify-center items-center text-3xl font-Alata">
-            PLEASE CHOOSE MOBILE SCREEN
+        PLEASE CHOOSE MOBILE SCREEN
       </section>
-      </>
-    );
-  }
-  
-  export default myIngredientsView;
+    </>
+  );
+}
+
+export default myIngredientsView;

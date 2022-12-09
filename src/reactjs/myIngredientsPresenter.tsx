@@ -1,11 +1,26 @@
+import React from "react";
 import MyIngredientsView from "../Views/myIngredientsView"
 
 export default
-function myIngredientsPresenter(props : any){
+    function MyIngredientsPresenter(props: any) {
+    const [ingredients, cpyIngr] = React.useState(props.model.mySavedIngredients)
 
-    return(
+    function observerACB() {
+        cpyIngr(props.model.mySavedIngredients)
+    }
+    function wasCreatedACB() {
+        props.model.addObserver(observerACB);
+        return function isTakenDownACB() { props.model.removeObserver(observerACB) };
+    }
+    React.useEffect(wasCreatedACB, []);
+
+    function removeFromIngrListACB(ingrToRemove : any){
+        props.model.removeIngredient(ingrToRemove)
+    }
+
+    return (
         <>
-            <MyIngredientsView/>
+            <MyIngredientsView ingrList={props.model.mySavedIngredients} removeIngr={removeFromIngrListACB}/>
         </>
     )
 }
