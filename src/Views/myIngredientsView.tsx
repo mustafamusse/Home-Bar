@@ -1,3 +1,5 @@
+import SmallBackButton from "../Components/smallBackButton";
+
 function myIngredientsView(props: any) {
 
   function removeIngredientsACB(e : any) {
@@ -10,6 +12,7 @@ function myIngredientsView(props: any) {
       {/* MOBILE SCREEN */}
       <section id="mobileScreen" className="lg:hidden font-Alata">
         <div className="bg-neutral fixed w-screen h-[15vh]">
+          <SmallBackButton text="Search" link="#search"></SmallBackButton>
           <span className="text-2xl text-black flex justify-center items-end h-full pb-8">
             My Ingredients
           </span>

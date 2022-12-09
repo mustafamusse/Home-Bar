@@ -1,4 +1,4 @@
-
+import ToggleButton from "../Components/toggleButton";
 
 function AddIngredientsView(props: any) {
 
@@ -45,17 +45,16 @@ function AddIngredientsView(props: any) {
             <span>Add new ingredients</span>
           </a>
         </div>
-        <div className="flex flex-col items-start w-screen h-fit pb-[10vh] text-xl font-semibold bg-neutral overflow-hidden overflow-auto">
+        <div className="flex flex-col items-start w-screen h-fit pb-[10vh] text-xl font-semibold bg-neutral">
           <div className="mt-[40vh] px-10 pt-8 w-full z-30">
             {props.searchResults.map((ingredient: any) => (
               <div key={ingredient.idIngredient} className="w-full flex justify-between py-2">
                 <div className="text-white">{ingredient.strIngredient}</div>
-                <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
-                  <button className="w-fit h-fit text-white text-base font-medium"
+                  <ToggleButton enabled={true} ></ToggleButton>
+                  {/*<button className="w-fit h-fit text-white text-base font-medium"
                     id={ingredient.idIngredient}
                     name={ingredient.strIngredient}
-                    onClick={addToMyIngredientsACB}>Add</button>
-                </div>
+                    onClick={addToMyIngredientsACB}>Add</button>*/}
               </div>
             ))}
           </div>
