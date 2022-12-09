@@ -27,8 +27,8 @@ function myIngredientsView(props: any) {
         <div className="flex flex-col items-start w-screen h-fit pb-[20vh] text-xl font-semibold bg-neutral ">
           <div className="mt-[25vh] px-10 pt-8 w-full">
             {props.ingrList.map((ingredient : any) => (
-              <div className="w-full flex justify-between">
-                <div key={ingredient.id}>{ingredient.name}</div>
+              <div key={ingredient.id} className="w-full flex justify-between">
+                <div >{ingredient.name}</div>
                 <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
                   <button className="w-fit h-fit text-white text-base font-medium" 
                   id={ingredient.id}
