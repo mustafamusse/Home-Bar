@@ -30,7 +30,6 @@ function AddIngredientsView(props: any) {
             <div className="h-[6vh] mt-[4vh] mx-8 bg-light-green rounded-[1.3rem] flex justify-between items-center pl-5 pr-2 shadow-xl font-semibold">
               <input onChange={setInputACB} className="bg-light-green w-[80%] h-full font-semibold placeholder-black text-black" type="text" placeholder="Search ingredient:">
               </input>
-              {/*GÖR SNYGGT?*/}
               <button onClick={searchACB} className="bg-dark-green px-2 py-1 rounded-xl text-white font-medium text-center">Search</button>
             </div>
             <div className="h-[10vh] flex justify-center items-center text-white text-lg underline-offset-[8px] underline z-50 bg-dark-green">Choose Ingridents:</div>
@@ -49,8 +48,8 @@ function AddIngredientsView(props: any) {
         <div className="flex flex-col items-start w-screen h-fit pb-[10vh] text-xl font-semibold bg-neutral overflow-hidden overflow-auto">
           <div className="mt-[40vh] px-10 pt-8 w-full z-30">
             {props.searchResults.map((ingredient: any) => (
-              <div className="w-full flex justify-between py-2">
-                <div key={ingredient.idIngredient} className="text-white">{ingredient.strIngredient}</div>
+              <div key={ingredient.idIngredient} className="w-full flex justify-between py-2">
+                <div className="text-white">{ingredient.strIngredient}</div>
                 <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
                   <button className="w-fit h-fit text-white text-base font-medium"
                     id={ingredient.idIngredient}
