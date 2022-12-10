@@ -1,5 +1,6 @@
 import SmallBackButton from "../Components/smallBackButton";
 import { PlusCircleIcon, ArrowUturnRightIcon } from "@heroicons/react/24/outline";
+import Logo from "../Components/logo";
 
 function myIngredientsView(props: any) {
 
@@ -10,6 +11,7 @@ function myIngredientsView(props: any) {
 
   return (
     <>
+      <Logo></Logo>
       {/* MOBILE SCREEN */}
       <section id="mobileScreen" className="lg:hidden font-Alata">
         <div className="w-screen h-[20vh] fixed left-0 top-0 flex justify-center bg-neutral">

@@ -1,3 +1,4 @@
+import Logo from "../Components/logo";
 import SmallBackButton from "../Components/smallBackButton";
 import ToggleButton from "../Components/toggleButton";
 
@@ -18,6 +19,7 @@ function AddIngredientsView(props: any) {
   }
   return (
     <>
+      <Logo></Logo>
       {/* MOBILE SCREEN */}
       <section id="mobileScreen" className="lg:hidden font-Alata">
         <section id="addIngredients" className="fixed w-screen h-screen z-20  flex justify-center items-end">
