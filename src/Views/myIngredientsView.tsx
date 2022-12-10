@@ -29,6 +29,7 @@ function myIngredientsView(props: any) {
           <span className="font-bold text-xl">Ingredients</span>
         </a>
         <div className="flex flex-col items-start w-screen h-fit min-h-[120vh] text-xl font-semibold bg-neutral ">
+        {/* Check if the user has any ingredients added or not, and displays infromation if no ingredients is added. */}
         <div className={props.ingrList.length ? "hidden" : "block"}>
               <div className="fixed top-1/2 left-1/4 flex flex-col justify-center items-start">
                 <span>Start adding</span>
