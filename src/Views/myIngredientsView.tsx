@@ -1,4 +1,5 @@
 import SmallBackButton from "../Components/smallBackButton";
+import { PlusCircleIcon, ArrowUturnRightIcon } from "@heroicons/react/24/outline";
 
 function myIngredientsView(props: any) {
 
@@ -11,24 +12,33 @@ function myIngredientsView(props: any) {
     <>
       {/* MOBILE SCREEN */}
       <section id="mobileScreen" className="lg:hidden font-Alata">
-        <div className="bg-neutral fixed w-screen h-[15vh]">
-          <SmallBackButton text="Search" link="#search"></SmallBackButton>
-          <span className="text-2xl text-black flex justify-center items-end h-full pb-8">
-            My Ingredients
-          </span>
+        <div className="w-screen h-[20vh] fixed left-0 top-0 flex justify-center bg-neutral">
+          <div className="bg-neutral fixed w-screen h-fit pt-5">
+            <SmallBackButton text="Search" link="#search"></SmallBackButton>
+          </div>
+          <div className="text-3xl flex justify-center items-end px-2 pb-2 w-fit border-b-2  border-dark-red">
+            <span>My Ingredients</span>
+          </div>
         </div>
-        <div className="fixed mt-[15vh] w-screen h-[10vh] flex justify-center items-center bg-neutral border-b-2 border-dark-red">
-          <a href='#add_ingredients' className="w-[250px] h-[50px] rounded-2xl bg-light-red text-white shadow-lg text-xl flex justify-center items-center">
-            <span>Add new ingredients</span>
-          </a>
-        </div>
-        <div className="fixed mt-[85vh] w-screen h-[15vh] flex justify-center items-center bg-neutral border-t-2 border-dark-red">
-          <a href='#search' className="w-[250px] h-[50px] rounded-3xl bg-dark-red text-white text-xl flex justify-center items-center">
-            <span>Back to Search</span>
-          </a>
-        </div>
-        <div className="flex flex-col items-start w-screen h-fit pb-[20vh] text-xl font-semibold bg-neutral ">
-          <div className="mt-[25vh] px-10 pt-8 w-full">
+        <a href='#add_ingredients' className="fixed right-7 bottom-12 h-fit w-fit flex justify-center items-center bg-white shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1">
+          <div className="w-[40px] h-[40px] rounded-2xl text-black">
+            <PlusCircleIcon></PlusCircleIcon>
+          </div>
+          <span className="font-bold text-xl">Ingredients</span>
+        </a>
+        <div className="flex flex-col items-start w-screen h-fit min-h-[120vh] text-xl font-semibold bg-neutral ">
+        <div className={props.ingrList.length ? "hidden" : "block"}>
+              <div className="fixed top-1/2 left-1/4 flex flex-col justify-center items-start">
+                <span>Start adding</span>
+                <div className="flex">your ingredients here
+                  <span className=" w-[50px] h-[50px] rotate-90 -mt-6">
+                    <ArrowUturnRightIcon></ArrowUturnRightIcon>
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+          <div className="mt-[20vh] px-10 pt-8 w-full">
             {props.ingrList.map((ingredient : any) => (
               <div key={ingredient.id} className="w-full flex justify-between">
                 <div >{ingredient.name}</div>

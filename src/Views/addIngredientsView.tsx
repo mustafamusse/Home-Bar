@@ -50,7 +50,7 @@ function AddIngredientsView(props: any) {
             {props.searchResults.map((ingredient: any) => (
               <div key={ingredient.idIngredient} className="w-full flex justify-between py-2">
                 <div className="text-white">{ingredient.strIngredient}</div>
-                  <ToggleButton enabled={true} ></ToggleButton>
+                  <ToggleButton></ToggleButton>
                   {/*<button className="w-fit h-fit text-white text-base font-medium"
                     id={ingredient.idIngredient}
                     name={ingredient.strIngredient}
