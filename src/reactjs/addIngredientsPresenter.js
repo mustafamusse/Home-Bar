@@ -11,7 +11,6 @@ export default
     const [, reRender] = React.useState();
 
     function componentWasCreatedACB() {
-        console.log("component created!");
         searchResultsPromiseState.promise = searchIngredientByName("")
         resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
     }

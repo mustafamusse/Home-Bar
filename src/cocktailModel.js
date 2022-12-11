@@ -1,4 +1,4 @@
-import {existsInArray} from "./utils"
+import { existsInArray } from "./utils"
 
 class cocktailModel {
     constructor(savedIngr = []) {
@@ -13,16 +13,17 @@ class cocktailModel {
     addToIngrList(ingrToAdd) {
         if (!existsInArray(this.mySavedIngredients, ingrToAdd))
             this.mySavedIngredients = [...this.mySavedIngredients, ingrToAdd]
-        this.notifyObservers({newIngredient : ingrToAdd});
+        console.log(ingrToAdd)
+        this.notifyObservers({ newIngredient: ingrToAdd });
     }
 
-    removeIngredient(item){
+    removeIngredient(item) {
         function isNotSame(obs) {
-            if (obs.id != item.id)
+            if (obs.idIngredient != item.idIngredient)
                 return true;
         }
         this.mySavedIngredients = this.mySavedIngredients.filter(isNotSame)
-        this.notifyObservers({removedIngredient : item});
+        this.notifyObservers({ removedIngredient: item });
     }
 
     addObserver(cb) {
