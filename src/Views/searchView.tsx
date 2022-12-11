@@ -1,3 +1,4 @@
+import Logo from "../Components/logo";
 
 function searchView(props : any) {
 
@@ -11,6 +12,7 @@ function searchView(props : any) {
 
     return (
         <>
+        <Logo></Logo>
         {/* MOBILE SCREEN */}
         <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral w-screen font-Alata">
             <span className="text-2xl text-black py-8">

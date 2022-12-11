@@ -1,3 +1,4 @@
+import Logo from "../Components/logo";
 
 
 const dummyRecommendedDrinks = [
@@ -40,6 +41,7 @@ const dummyRecommendedDrinks = [
 function StartscreenView() {
     return (
         <>
+        <Logo></Logo>
         {/* MOBILE SCREEN */}
         <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral h-200vh w-screen font-Alata">
             <span className="text-2xl text-black pt-8">
