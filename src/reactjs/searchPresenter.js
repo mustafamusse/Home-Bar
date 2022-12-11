@@ -12,7 +12,6 @@ export default
     const [, reRender] = React.useState();
 
     function componentWasCreatedACB() { 
-        console.log("component created!");
         searchResultsPromiseState.promise = searchCocktailByName("")
          resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
     }

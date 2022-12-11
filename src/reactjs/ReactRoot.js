@@ -1,9 +1,9 @@
 // Add relevant imports here 
 
-import promiseNoData from "../Views/promiseNoData"
+import promiseNoData from "../Views/promiseNoData";
 import resolvePromise from "../resolvePromise";
 import App from "../App";
-import { updateFirebaseFromModel, updateModelFromFirebase, firebaseModelPromise } from "../Views/firebaseModel";
+import { updateFirebaseFromModel, updateModelFromFirebase, firebaseModelPromise } from "../firebaseModel";
 import React from "react";
 
 // Define the ReactRoot component/*
@@ -22,12 +22,10 @@ export default function ReactRoot() {
         reRender(new Object());
     }
 
-    function componentWasCreatedACB() {      
+    function componentWasCreatedACB() { 
         resolvePromise(firebaseModelPromise(), firebaseModelPromiseState, promiseChangeNotificationACB);  
         
-
         return function isTakenDownACB() {
-            console.log("component is dying");
         }
     }
     React.useEffect(componentWasCreatedACB, []);

@@ -5,25 +5,24 @@ function treatHTTPResponseACB(response) {
     return response.json();
 }
 
-function transformCocktailSearchResultACB(response) {   
+function transformCocktailSearchResultACB(response) {
     return response.drinks
 }
 
-function transformIngrSearchResultACB(response){
-    console.log(response.ingredients)
+function transformIngrSearchResultACB(response) {
     return response.ingredients
 }
 
 function searchCocktailByName(cocktailName) {
-    return fetch ("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName.query) 
+    return fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName.query)
         .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
-}   
+}
 function searchIngredientByName(ingrName) {
-    return fetch ("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + ingrName.query) 
+    return fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + ingrName.query)
         .then(treatHTTPResponseACB).then(transformIngrSearchResultACB)
 }
-function searchIngredientById(ingrId){
-return fetch ("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=" + ingrId) 
+function searchIngredientById(ingrId) {
+    return fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=" + ingrId)
         .then(treatHTTPResponseACB).then(transformIngrSearchResultACB)
 }
-export{searchCocktailByName, searchIngredientByName, searchIngredientById}
+export { searchCocktailByName, searchIngredientByName, searchIngredientById }

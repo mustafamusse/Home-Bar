@@ -11,7 +11,7 @@ import ReactRoot from './reactjs/ReactRoot';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode> 
-    <App model = {new cocktailModel} />
+    <ReactRoot/>
   </React.StrictMode>
 )
 

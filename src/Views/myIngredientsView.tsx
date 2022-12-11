@@ -5,9 +5,12 @@ import Logo from "../Components/logo";
 function myIngredientsView(props: any) {
 
   function removeIngredientsACB(e : any) {
-    console.log({id : e.target.id, name: e.target.name})
-    props.removeIngr({id : e.target.id, name: e.target.name});
+    var toRemove = myIngrArr.filter((obj : any) => e.target.id == obj.idIngredient)
+ //   console.log(toRemove)
+    props.removeIngr(toRemove[0])
   }
+
+  const myIngrArr = props.ingrList;
 
   return (
     <>
@@ -47,8 +50,7 @@ function myIngredientsView(props: any) {
                 <div >{ingredient.name}</div>
                 <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
                   <button className="w-fit h-fit text-white text-base font-medium" 
-                  id={ingredient.id}
-                  name={ingredient.name}
+                  id={ingredient.idIngredient}
                   onClick={removeIngredientsACB}>Remove</button>
                 </div>
               </div>

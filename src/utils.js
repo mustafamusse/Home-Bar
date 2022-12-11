@@ -1,7 +1,7 @@
 
 function existsInArray(arrToSearch, item) {
     function isSame(obs) {
-        if (obs.id === item.id)
+        if (obs.idIngredient === item.idIngredient)
             return true;
     }
     var arr = arrToSearch.filter(isSame)
