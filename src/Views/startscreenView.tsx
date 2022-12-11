@@ -36,8 +36,6 @@ const dummyRecommendedDrinks = [
   },
 ]
 
-
-
 function StartscreenView() {
     return (
         <>
