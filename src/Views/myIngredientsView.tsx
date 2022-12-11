@@ -46,7 +46,7 @@ function myIngredientsView(props: any) {
             </div>
           <div className="mt-[20vh] px-10 pt-8 w-full">
             {props.ingrList.map((ingredient : any) => (
-              <div key={ingredient.id} className="w-full flex justify-between">
+              <div key={ingredient.idIngredient} className="w-full flex justify-between">
                 <div >{ingredient.name}</div>
                 <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
                   <button className="w-fit h-fit text-white text-base font-medium" 
