@@ -1,6 +1,7 @@
 import SmallBackButton from "../Components/smallBackButton";
 import { PlusCircleIcon, ArrowUturnRightIcon } from "@heroicons/react/24/outline";
 import Logo from "../Components/logo";
+import ToggleButton from "../Components/toggleButton";
 
 function myIngredientsView(props: any) {
 
@@ -47,12 +48,17 @@ function myIngredientsView(props: any) {
           <div className="mt-[20vh] px-10 pt-8 w-full">
             {props.ingrList.map((ingredient : any) => (
               <div key={ingredient.idIngredient} className="w-full flex justify-between">
-                <div >{ingredient.name}</div>
+                <div >{ingredient.strIngredient}</div>
+                <div className="w-fit h-fit pt-2">
+                  <ToggleButton></ToggleButton>
+                </div>
+                {/*
                 <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
                   <button className="w-fit h-fit text-white text-base font-medium" 
                   id={ingredient.idIngredient}
                   onClick={removeIngredientsACB}>Remove</button>
                 </div>
+                */}
               </div>
             ))}
           </div>
