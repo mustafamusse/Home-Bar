@@ -1,9 +1,10 @@
+import SmallBackButton from "../Components/smallBackButton";
 
 
 function DetailView(props: any) {
 
-  function renderIngr(obj: any, index : any) {
-    if(index > 16 && index<32 && obj)
+  function renderIngr(obj: any, index: any) {
+    if (index > 16 && index < 32 && obj)
       return <li>{obj}</li>
   }
 
@@ -12,8 +13,12 @@ function DetailView(props: any) {
     <>
       {/* MOBILE SCREEN */}
       <section id="mobileScreen" className="flex flex-col lg:hidden h-screen w-screen bg-neutral font-Alata">
+
+        <div className="bg-neutral w-screen">
+          <SmallBackButton text="Search" link="#search"></SmallBackButton>
+        </div>
         <div className="flex flex-col items-center">
-          <img src="./drink-icon.png" className="w-40 pt-7 pb-3"></img>
+          <img src={props.selectedItem.strImageSource} className="w-40 pt-7 pb-3"></img>
         </div>
         <ul className="space-y-1 max-w-md list-disc list-inside text-black dark:text-black pl-2">
           {props.ingredients.map(renderIngr)}
