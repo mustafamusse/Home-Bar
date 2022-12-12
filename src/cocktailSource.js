@@ -1,3 +1,4 @@
+import { apiURL } from "./apiConfig";
 function treatHTTPResponseACB(response) {
     if (!response.ok) {
         throw new Error("API problem " + response.status);
@@ -14,15 +15,28 @@ function transformIngrSearchResultACB(response) {
 }
 
 function searchCocktailByName(cocktailName) {
-    return fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName.query)
+    return fetch(apiURL + "search.php?s=" + cocktailName.query)
         .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
 }
+
+function detailedCocktailSearchByID(cocktailId) {
+    return fetch(apiURL + "lookup.php?i=" + cocktailId)
+        .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
+}
+
 function searchIngredientByName(ingrName) {
-    return fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + ingrName.query)
+    return fetch(apiURL + "search.php?i=" + ingrName.query)
         .then(treatHTTPResponseACB).then(transformIngrSearchResultACB)
 }
 function searchIngredientById(ingrId) {
-    return fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=" + ingrId)
+    return fetch(apiURL + "lookup.php?iid=" + ingrId)
         .then(treatHTTPResponseACB).then(transformIngrSearchResultACB)
 }
-export { searchCocktailByName, searchIngredientByName, searchIngredientById }
+
+
+function filterMultiIngr(ingrList) {
+    return fetch(apiURL + "filter.php?i=" + ingrList)
+        .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
+}
+
+export { searchCocktailByName, searchIngredientByName, searchIngredientById, filterMultiIngr, detailedCocktailSearchByID }

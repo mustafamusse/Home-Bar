@@ -49,11 +49,11 @@ function AddIngredientsView(props: any) {
             {searchResultArr.map((ingredient: any) => (
               <div key={ingredient.idIngredient} className="w-full flex justify-between py-2">
                 <div className="text-white">{ingredient.strIngredient}</div>
-                  <ToggleButton></ToggleButton>
-                  {/*<button className="w-fit h-fit text-white text-base font-medium"
+                  {/*<ToggleButton></ToggleButton>*/}
+                  {<button className="w-fit h-fit text-white text-base font-medium"
                     id={ingredient.idIngredient}
                     name={ingredient.strIngredient}
-                    onClick={addToMyIngredientsACB}>Add</button>*/}
+                    onClick={addToMyIngredientsACB}>Add</button>}
               </div>
             ))}
           </div>
