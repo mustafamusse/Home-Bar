@@ -9,4 +9,8 @@ function existsInArray(arrToSearch, item) {
     else return false
 }
 
-export {existsInArray}
+function ingrToString(arr){
+    return arr.map(obj => obj.strIngredient).toString().replaceAll(" ", "_")
+}
+
+export {existsInArray, ingrToString}

@@ -50,15 +50,14 @@ function myIngredientsView(props: any) {
               <div key={ingredient.idIngredient} className="w-full flex justify-between">
                 <div >{ingredient.strIngredient}</div>
                 <div className="w-fit h-fit pt-2">
-                  <ToggleButton></ToggleButton>
+                  {/*<ToggleButton></ToggleButton>*/}
                 </div>
-                {/*
                 <div className="w-fit h-fit px-2 bg-light-red flex items-center justify-center rounded-[0.65rem]">
                   <button className="w-fit h-fit text-white text-base font-medium" 
                   id={ingredient.idIngredient}
                   onClick={removeIngredientsACB}>Remove</button>
                 </div>
-                */}
+                
               </div>
             ))}
           </div>

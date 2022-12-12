@@ -1,9 +1,10 @@
-import { existsInArray } from "./utils"
+import { existsInArray, ingrToString } from "./utils"
 
 class cocktailModel {
     constructor(savedIngr = []) {
         this.observers = [];
         this.mySavedIngredients = savedIngr;
+        this.mySavedIngredientsString = ingrToString(savedIngr)
     }
 
     setSearchQuery(q) {
@@ -11,10 +12,11 @@ class cocktailModel {
     }
 
     addToIngrList(ingrToAdd) {
-        if (!existsInArray(this.mySavedIngredients, ingrToAdd))
+        if (!existsInArray(this.mySavedIngredients, ingrToAdd)) {
             this.mySavedIngredients = [...this.mySavedIngredients, ingrToAdd]
-        console.log(ingrToAdd)
-        this.notifyObservers({ newIngredient: ingrToAdd });
+            this.notifyObservers({ newIngredient: ingrToAdd });
+            this.mySavedIngredientsString = ingrToString(this.mySavedIngredients)
+        }
     }
 
     removeIngredient(item) {
@@ -24,6 +26,7 @@ class cocktailModel {
         }
         this.mySavedIngredients = this.mySavedIngredients.filter(isNotSame)
         this.notifyObservers({ removedIngredient: item });
+        this.mySavedIngredientsString = ingrToString(this.mySavedIngredients)
     }
 
     addObserver(cb) {
@@ -45,5 +48,6 @@ class cocktailModel {
         } catch (err) { console.error(err); }
     }
 }
+
 
 export default cocktailModel

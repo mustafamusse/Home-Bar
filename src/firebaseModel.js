@@ -20,7 +20,6 @@ function firebaseModelPromise() {
         }
 
         function createModelACB(ingredientsArr) {
-            console.log(ingredientsArr.flat())
             return new CocktailModel(ingredientsArr.flat())
         }
 
@@ -37,12 +36,10 @@ function firebaseModelPromise() {
 
 function updateFirebaseFromModel(model) {
     function firebaseObserverUpdate(payload) {
-        console.log(payload)
         if (payload.newIngredient && payload) {
             firebase.database().ref(REF + "/userIngredients/" + payload.newIngredient.idIngredient).set(payload.newIngredient.idIngredient);
         }
         if (payload.removedIngredient && payload) {
-            console.log(payload.removedIngredient.idIngredient)
             firebase.database().ref(REF + "/userIngredients/" + payload.removedIngredient.idIngredient).set(null);
         }
     }
