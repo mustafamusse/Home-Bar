@@ -29,6 +29,7 @@ export default
     }
 
     function doDetailedSearch() {
+        doSearchACB()
         function makeArr(coktailList) {
             return coktailList.flat()
         }
@@ -45,7 +46,7 @@ export default
 
     return (
         <div>
-            <SearchView onInputChange={setQueryACB} onSearchClick={doSearchACB} />
+            <SearchView onInputChange={setQueryACB} onSearchClick={doDetailedSearch} />
             {promiseNoData(searchResultsPromiseState) ||
                 promiseNoData(detailedSearchResultsPromiseState) ||
                 <SearchResultsView searchResults={detailedSearchResultsPromiseState.data} />}
