@@ -5,6 +5,7 @@ class cocktailModel {
         this.observers = [];
         this.mySavedIngredients = savedIngr;
         this.mySavedIngredientsString = ingrToString(savedIngr);
+        this.detailCocktail = {};
     }
 
     setSearchQuery(q) {
@@ -12,10 +13,10 @@ class cocktailModel {
     }
 
     addToIngrList(ingrToAdd) {
-        if (!existsInArray(this.mySavedIngredients, ingrToAdd)){
+        if (!existsInArray(this.mySavedIngredients, ingrToAdd)) {
             this.mySavedIngredients = [...this.mySavedIngredients, ingrToAdd]
-        this.notifyObservers({ newIngredient: ingrToAdd });
-        this.mySavedIngredientsString = ingrToString(this.mySavedIngredients)
+            this.notifyObservers({ newIngredient: ingrToAdd });
+            this.mySavedIngredientsString = ingrToString(this.mySavedIngredients)
         }
     }
 
@@ -27,6 +28,12 @@ class cocktailModel {
         this.mySavedIngredients = this.mySavedIngredients.filter(isNotSame)
         this.notifyObservers({ removedIngredient: item });
         this.mySavedIngredientsString = ingrToString(this.mySavedIngredients)
+    }
+
+    setDetailCocktail(item) {
+        this.detailCocktail = item
+        this.notifyObservers({newDetailCocktail : item})
+        console.log(this.detailCocktail)
     }
 
     addObserver(cb) {

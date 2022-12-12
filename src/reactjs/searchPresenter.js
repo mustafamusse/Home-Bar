@@ -20,7 +20,7 @@ export default
         
         searchResultsPromiseState.promise = searchCocktailByName("")
         resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
-        
+
     }
 
     React.useEffect(componentWasCreatedACB, []);
@@ -56,11 +56,15 @@ export default
         reRender(new Object())
     }
 
+    function setItemInModel(item){
+        props.model.setDetailCocktail(item)
+    }
+
     return (
         <div>
             <SearchView onInputChange={setQueryACB} onSearchClick={doSearchACB} />
             {promiseNoData(searchResultsPromiseState) ||
-                <SearchResultsView searchResults={filteredCocktails} />}
+                <SearchResultsView searchResults={filteredCocktails} onItemSelect={setItemInModel} />}
         </div>
     )
 }
