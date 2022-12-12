@@ -1,5 +1,6 @@
 import { randomInt } from "crypto";
 import { serialize } from "v8";
+import Button from "../Components/button";
 import Logo from "../Components/logo";
 
 
@@ -60,8 +61,8 @@ function StartscreenView() {
             </input>
             To uncomment, remove the curlybrackets*/}         
             </a>
-            <a href="#search" className="rounded-2xl bg-light-red text-white text-xl justify-center px-3 py-0.5">
-            <span>Search drink</span>
+            <a href="#search">
+              <Button text="Search Drinks"></Button>
             </a>
 
             <span className="text-2xl text-black pt-8 text-center">
