@@ -1,3 +1,4 @@
+import Button from "../Components/button";
 
 
 function loginView(props : any) {
@@ -15,8 +16,8 @@ function loginView(props : any) {
             </span>
             <img src="./drink-icon.png" className="w-[65%] md:w-[30%] 2xl:w-[20%]"></img>
             <div className="flex flex-col justify-center items-center gap-2 lg:gap-5">
-              <a href="#start" className="w-[150px] h-[40px] rounded-2xl bg-light-red text-white text-xl flex justify-center items-center">
-              <span>Log in</span>
+              <a href="#start">
+              <Button text="Login"></Button>
               </a>
               <a  href='#register' className="flex flex-col justify-center items-center text-sm hover:underline">
               <div className="lg:hidden flex flex-col underline items-center">
