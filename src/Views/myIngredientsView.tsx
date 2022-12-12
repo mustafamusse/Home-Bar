@@ -1,5 +1,5 @@
 import SmallBackButton from "../Components/smallBackButton";
-import { PlusCircleIcon, ArrowUturnRightIcon } from "@heroicons/react/24/outline";
+import { PlusCircleIcon, ArrowUturnRightIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Logo from "../Components/logo";
 import ToggleButton from "../Components/toggleButton";
 
@@ -7,7 +7,7 @@ function myIngredientsView(props: any) {
 
   function removeIngredientsACB(e : any) {
     var toRemove = myIngrArr.filter((obj : any) => e.target.id == obj.idIngredient)
- //   console.log(toRemove)
+    console.log(e.target.id)
     props.removeIngr(toRemove[0])
   }
 
@@ -47,8 +47,13 @@ function myIngredientsView(props: any) {
             </div>
           <div className="mt-[20vh] px-10 pt-8 w-full">
             {props.ingrList.map((ingredient : any) => (
-              <div key={ingredient.idIngredient} className="w-full flex justify-between">
-                <div >{ingredient.strIngredient}</div>
+              <div key={ingredient.idIngredient} className="w-full flex justify-between py-1">
+                <div className="flex gap-4">
+                  <div className="w-[24px] h-[24px] text-red-900 pt-[2px]">
+                    <TrashIcon id={ingredient.idIngredient} onClick={removeIngredientsACB}></TrashIcon>
+                  </div>
+                  {ingredient.strIngredient}
+                </div>
                 <div className="w-fit h-fit pt-2">
                   <ToggleButton></ToggleButton>
                 </div>
