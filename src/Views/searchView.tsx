@@ -1,3 +1,4 @@
+import Button from "../Components/button";
 import Logo from "../Components/logo";
 
 function searchView(props : any) {
@@ -16,17 +17,15 @@ function searchView(props : any) {
         {/* MOBILE SCREEN */}
         <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral w-screen font-Alata">
             <span className="text-2xl text-black py-8">
-            Search for your Cocktail
+            Search Cocktails
             </span>
             <input onChange={setInputACB} className="border-2 border-black text-center pb-3.5" type="text" placeholder="Search here">
             </input>
 
-            <button onClick={searchACB} className="rounded-2xl bg-light-red text-white text-xl justify-center px-3">Search</button>
-            
-            <a href="#ingredients" className="w-[150px] h-[40px] rounded-2xl bg-light-red text-white text-xl flex justify-center items-center">
-            <span>Add ingredients</span>
+            <button onClick={searchACB} className="pb-7"><Button text="Search"></Button></button>
+            <a href="#ingredients">
+            <Button text="Add ingredients"></Button>
             </a>
-
         </section>
         
         {/* DESKTOP SCREEN */}
