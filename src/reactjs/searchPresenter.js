@@ -16,7 +16,7 @@ export default
 
     function componentWasCreatedACB() {
     //    doSearchACB()
-        searchResultsPromiseState.promise = searchCocktailByName("")
+        searchResultsPromiseState.promise = null
         resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
 
     }
