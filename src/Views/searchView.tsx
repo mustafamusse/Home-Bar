@@ -29,8 +29,17 @@ function searchView(props : any) {
         </section>
         
         {/* DESKTOP SCREEN */}
-        <section id="desktopScreen" className="hidden lg:flex w-screen h-screen justify-center items-center text-3xl font-Alata">
-            PLEASE CHOOSE MOBILE SCREEN
+        <section id="desktopScreen" className="hidden lg:flex flex-col w-screen items-center bg-neutral text-3xl font-Alata">
+              <span className="text-2xl text-black py-8">
+              Search Cocktails
+              </span>
+              <input onChange={setInputACB} className="border-2 border-black text-center pb-3.5" type="text" placeholder="Search here">
+              </input>
+
+              <button onClick={searchACB} className="pb-7"><Button text="Search"></Button></button>
+              <a href="#ingredients">
+              <Button text="Add ingredients"></Button>
+              </a>
         </section>
       </>
     );

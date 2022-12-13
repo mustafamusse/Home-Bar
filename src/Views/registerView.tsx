@@ -43,11 +43,8 @@ function registerView(props : any) {
             <SmallBackButton text="Login" link="#login"></SmallBackButton>
           </div>
 
-            <img src="./drink-icon.png" className="w-[65%] md:w-[30%] 2xl:w-[20%]"></img>
+            <img src="./HomebarBlackLogo.png" className="w-[65%] md:w-[30%] 2xl:w-[20%]"></img>
 
-           <div className="text-5xl pb-5">
-            HomeBar
-           </div>
            <div className="text-3xl pb-10">
             Register Form
            </div>

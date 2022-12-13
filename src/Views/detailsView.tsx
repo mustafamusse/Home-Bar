@@ -20,6 +20,7 @@ function DetailView(props: any) {
         <div className="flex flex-col items-center">
           <img src={props.selectedItem.strDrinkThumb} className="w-40 pt-7 pb-3"></img>
         </div>
+        
         <ul className="space-y-1 max-w-md list-disc list-inside text-black dark:text-black pl-2">
           {props.ingredients.map(renderIngr)}
         </ul>
@@ -34,33 +35,29 @@ function DetailView(props: any) {
       </section>
 
       {/* DESKTOP SCREEN */}
-      <section id="desktopScreen" className="hidden lg:flex flex-row w-screen h-screen justify-center items-center bg-neutral font-Alata">
+      <section id="desktopScreen" className="hidden lg:flex flex-col w-screen h-screen bg-neutral font-Alata">
 
-        <div className="flex flex-row items-center">
-          <img src="./drink-icon.png" className="w-40 pt-7 pb-3"></img>
+      <div className="bg-neutral w-screen">
+          <SmallBackButton text="Search" link="#search"></SmallBackButton>
+        </div>
+        
+        <div className="flex flex-col items-center pt-7 pb-3">
+          <img src={props.selectedItem.strDrinkThumb} className="w-96 shadow-lg shadow-black"></img>
+        </div>
+    
+        <div className="flex flex-col items-center pt-4 w-5/6">
+        <ul className="space-y-1 list-disc list-inside text-black dark:text-black">
+            {props.ingredients.map(renderIngr)}
+          </ul>
         </div>
 
-        <ul className="space-y-1 max-w-md list-disc list-inside text-black dark:text-black pl-2">
-          <li>
-            1 lime
-          </li>
-          <li>
-            1/2 tsp sugar
-          </li>
-          <li>
-            1/2 L vodka :D
-          </li>
-        </ul>
-
-        <div className="flex flex-row items-center pt-2 text-xl">
+        <div className="flex flex-col items-center pt-2 text-xl">
           Instructions
         </div>
 
         <div className="flex flex-col items-center pt-4">
           <p className="w-5/6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae sed non impedit voluptas laborum atque deleniti. Quasi ullam, eos velit illo consequuntur quis maiores modi sint esse aspernatur similique?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae sed non impedit voluptas laborum atque deleniti. Quasi ullam, eos velit illo consequuntur quis maiores modi sint esse aspernatur similique?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae sed non impedit voluptas laborum atque deleniti. Quasi ullam, eos velit illo consequuntur quis maiores modi sint esse aspernatur similique?
+            {props.selectedItem.strInstructions}
           </p>
         </div>
 
