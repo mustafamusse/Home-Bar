@@ -17,8 +17,8 @@ function myIngredientsView(props: any) {
     <>
       <Logo></Logo>
       {/* MOBILE SCREEN */}
-      <section id="mobileScreen" className="lg:hidden font-Alata">
-        <div className="w-screen h-[20vh] fixed left-0 top-0 flex justify-center bg-neutral">
+      <section id="mobileScreen" className=" font-Alata">
+        <div className="w-screen h-[20vh] lg:h-[25vh] fixed left-0 top-0 flex justify-center bg-neutral lg:z-10 lg:shadow-md lg:pb-10">
           <div className="bg-neutral fixed w-screen h-fit pt-5">
             <SmallBackButton text="Search" link="#search"></SmallBackButton>
           </div>
@@ -26,7 +26,7 @@ function myIngredientsView(props: any) {
             <span>My Ingredients</span>
           </div>
         </div>
-        <a href='#add_ingredients' className="fixed right-7 bottom-12 h-fit w-fit flex justify-center items-center bg-white shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1">
+        <a href='#add_ingredients' className="fixed right-7 bottom-12 h-fit w-fit flex justify-center items-center bg-white shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50">
           <div className="w-[40px] h-[40px] rounded-2xl text-black">
             <PlusCircleIcon></PlusCircleIcon>
           </div>
@@ -45,7 +45,7 @@ function myIngredientsView(props: any) {
                 
               </div>
             </div>
-          <div className="mt-[20vh] px-10 pt-8 w-full">
+          <div className="mt-[20vh] px-10 pt-8 w-full md:p-20 lg:px-[25vw]">
             {props.ingrList.map((ingredient : any) => (
               <div key={ingredient.idIngredient} className="w-full flex justify-between py-1">
                 <div className="flex gap-4">
@@ -54,7 +54,7 @@ function myIngredientsView(props: any) {
                   </div>
                   {ingredient.strIngredient}
                 </div>
-                <div className="w-fit h-fit pt-2">
+                <div className="w-fit h-fit pt-2 z-0">
                   <ToggleButton></ToggleButton>
                 </div>
                 {/*
@@ -71,10 +71,6 @@ function myIngredientsView(props: any) {
 
       </section>
 
-      {/* DESKTOP SCREEN */}
-      <section id="desktopScreen" className="hidden lg:flex w-screen h-screen justify-center items-center text-3xl font-Alata">
-        PLEASE CHOOSE MOBILE SCREEN
-      </section>
     </>
   );
 }
