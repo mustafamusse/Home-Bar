@@ -1,5 +1,6 @@
 import { randomInt } from "crypto";
 import { serialize } from "v8";
+import { showPopularDrinks } from "../cocktailSource";
 import Button from "../Components/button";
 import Logo from "../Components/logo";
 
@@ -10,7 +11,7 @@ function StartscreenView(props: any) {
         props.onItemSelect(cocktail)
     }
     //   function chooseDishACB() {props.clickedDish(dish); window.location.hash = "#details"}
-    return (<a href="#detail" onClick={itemSelected}>
+    return (<a key={cocktail.idDrink} href="#detail" onClick={itemSelected}>
         <div className="flex flex-col pt-8 items-center text-center">
             <img src={cocktail.strDrinkThumb} className="w-100 h-40 shadow-lg shadow-black"  ></img>
             <div className="pt-3">{cocktail.strDrink}</div>
