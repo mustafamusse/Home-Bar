@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+.apiConfig.tsx
+.firebaseConfig.tsx
 
 # testing
 /coverage
