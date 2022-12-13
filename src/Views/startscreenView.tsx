@@ -87,12 +87,7 @@ function StartscreenView(props: any) {
             
             <div className="py-8 w-full content-center">
                 <div className="grid grid-cols-3 pt-8 justify-between"> 
-                  {dummyRecommendedDrinks.map((drink) => (
-                  <div className="flex flex-col pt-8 items-center text-center">
-                    <img src={drink.image} className="w-100 h-40"></img>
-                    <div key={drink.title}>{drink.title}</div>
-                  </div>
-                ))}
+                {props.popularDrinks.map(popDrinksCB)}
                 </div>
             </div>
         </section>
