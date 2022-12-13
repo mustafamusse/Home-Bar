@@ -6,8 +6,7 @@ import ToggleButton from "../Components/toggleButton";
 function AddIngredientsView(props: any) {
 
   function addToMyIngredientsACB(e: any) {
-    var toAdd = searchResultArr.filter((obj : any) => e.target.id == obj.idIngredient)
-    props.onAddIngr(toAdd[0])
+    props.onAddIngr(e.target.name)
   }
 
   function setInputACB(evt: any) {
@@ -47,12 +46,11 @@ function AddIngredientsView(props: any) {
         <div className="flex flex-col items-start w-screen h-fit pb-[10vh] text-xl font-semibold bg-neutral">
           <div className="mt-[40vh] px-10 pt-8 w-full z-30">
             {searchResultArr.map((ingredient: any) => (
-              <div key={ingredient.idIngredient} className="w-full flex justify-between py-2">
-                <div className="text-white">{ingredient.strIngredient}</div>
+              <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2">
+                <div className="text-white">{ingredient.strIngredient1}</div>
                   {/*<ToggleButton></ToggleButton>*/}
                   {<button className="w-fit h-fit text-white text-base font-medium"
-                    id={ingredient.idIngredient}
-                    name={ingredient.strIngredient}
+                    name={ingredient.strIngredient1}
                     onClick={addToMyIngredientsACB}>Add</button>}
               </div>
             ))}

@@ -23,7 +23,7 @@ function detailedCocktailSearchByID(cocktailId) {
     return fetch(apiURL + "lookup.php?i=" + cocktailId)
         .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
 }
-
+ 
 function searchIngredientByName(ingrName) {
     return fetch(apiURL + "search.php?i=" + ingrName.query)
         .then(treatHTTPResponseACB).then(transformIngrSearchResultACB)
@@ -38,9 +38,14 @@ function showPopularDrinks() {
         .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
 }
 
+function listIngredients() {
+    return fetch(apiURL + "list.php?i=list")
+        .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
+}
+
 function filterMultiIngr(ingrList) {
     return fetch(apiURL + "filter.php?i=" + ingrList)
         .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
 }
 
-export { searchCocktailByName, searchIngredientByName, searchIngredientById, filterMultiIngr, detailedCocktailSearchByID, showPopularDrinks }
+export { searchCocktailByName, searchIngredientByName, searchIngredientById, filterMultiIngr, detailedCocktailSearchByID, showPopularDrinks, listIngredients }

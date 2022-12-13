@@ -1,6 +1,6 @@
 function promiseNoData(promiseState) {
-    if (!(promiseState.promise))
-        return <div>no data</div>;
+    if (!promiseState.promise)
+        return <div></div>;
     else if (!(promiseState.data || promiseState.error))
         return <img src="../../Spinner-3.gif"></img>;
     else if (!promiseState.data && promiseState.error)
@@ -12,7 +12,6 @@ function promiseNoData(promiseState) {
         );
     else return false;
 }
-
 
 export default promiseNoData
 

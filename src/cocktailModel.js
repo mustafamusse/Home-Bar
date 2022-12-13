@@ -1,4 +1,6 @@
 import { existsInArray, ingrToString } from "./utils"
+import { searchIngredientByName } from "./cocktailSource"
+import resolvePromise from "./resolvePromise";
 
 class cocktailModel {
     constructor(savedIngr = []) {
@@ -6,16 +8,17 @@ class cocktailModel {
         this.mySavedIngredients = savedIngr;
         this.mySavedIngredientsString = ingrToString(savedIngr);
         this.detailCocktail = {};
+        this.searchIngredientPromiseState = {};
     }
 
     setSearchQuery(q) {
         this.searchParams.query = q;
     }
 
-    addToIngrList(ingrToAdd) {
-        if (!existsInArray(this.mySavedIngredients, ingrToAdd)) {
-            this.mySavedIngredients = [...this.mySavedIngredients, ingrToAdd]
-            this.notifyObservers({ newIngredient: ingrToAdd });
+    addToIngrList(ingrObj) {
+        if (!existsInArray(this.mySavedIngredients, ingrObj)) {
+            this.mySavedIngredients = [...this.mySavedIngredients, ingrObj]
+            this.notifyObservers({ newIngredient: ingrObj })
             this.mySavedIngredientsString = ingrToString(this.mySavedIngredients)
         }
     }
@@ -32,7 +35,7 @@ class cocktailModel {
 
     setDetailCocktail(item) {
         this.detailCocktail = item
-        this.notifyObservers({newDetailCocktail : item})
+        this.notifyObservers({ newDetailCocktail: item })
         console.log(this.detailCocktail)
     }
 
