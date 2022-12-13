@@ -3,52 +3,21 @@ import { serialize } from "v8";
 import Button from "../Components/button";
 import Logo from "../Components/logo";
 
-
-const dummyRecommendedDrinks = [
-  {
-    title: "Vodka redbull",
-    image: "./cocktail.png"
-  },
-  {
-    title: "Martini",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-]
-
 function StartscreenView(props: any) {
 
   function popDrinksCB(cocktail: any) {
-    return (
-            <div className="flex flex-col pt-8 items-center text-center">
-                <img src={cocktail.strDrinkThumb} className="w-100 h-40"  ></img>
-                <div >{cocktail.strDrink}</div>
-            </div>
-        )
-  }
+    function itemSelected() {
+        props.onItemSelect(cocktail)
+    }
+    //   function chooseDishACB() {props.clickedDish(dish); window.location.hash = "#details"}
+    return (<a href="#detail" onClick={itemSelected}>
+        <div className="flex flex-col pt-8 items-center text-center">
+            <img src={cocktail.strDrinkThumb} className="w-100 h-40"  ></img>
+            <div >{cocktail.strDrink}</div>
+        </div>
+    </a>
+    )
+}
 
     return (
         <>
