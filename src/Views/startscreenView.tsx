@@ -12,8 +12,8 @@ function StartscreenView(props: any) {
     //   function chooseDishACB() {props.clickedDish(dish); window.location.hash = "#details"}
     return (<a href="#detail" onClick={itemSelected}>
         <div className="flex flex-col pt-8 items-center text-center">
-            <img src={cocktail.strDrinkThumb} className="w-100 h-40"  ></img>
-            <div >{cocktail.strDrink}</div>
+            <img src={cocktail.strDrinkThumb} className="w-100 h-40 shadow-lg shadow-black"  ></img>
+            <div className="pt-3">{cocktail.strDrink}</div>
         </div>
     </a>
     )

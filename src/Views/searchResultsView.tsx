@@ -8,8 +8,8 @@ function SearchResultsView(props: any) {
         //   function chooseDishACB() {props.clickedDish(dish); window.location.hash = "#details"}
         return (<a href="#detail" onClick={itemSelected}>
             <div className="flex flex-col pt-8 items-center text-center">
-                <img src={cocktail.strDrinkThumb} className="w-100 h-40"  ></img>
-                <div >{cocktail.strDrink}</div>
+                <img src={cocktail.strDrinkThumb} className="w-100 h-40 shadow-lg shadow-black"  ></img>
+                <div className="pt-4">{cocktail.strDrink}</div>
             </div>
         </a>
         )
@@ -23,7 +23,7 @@ function SearchResultsView(props: any) {
                 <div className="lg:hidden grid grid-cols-2 pt-8 justify-between"> 
                     {props.searchResults.map(cocktailImageCB)}            
                 </div>
-                <div className="hidden lg:grid grid-cols-4 pt-8 bg-neutral"> 
+                <div className="hidden lg:grid grid-cols-4 bg-neutral"> 
                 {props.searchResults.map(cocktailImageCB)}
                 </div>
            </div> 
