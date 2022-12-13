@@ -1,8 +1,5 @@
 function SearchResultsView(props: any) {
 
-
-
-
     function cocktailImageCB(cocktail: any) {
 
         function itemSelected() {

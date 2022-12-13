@@ -3,54 +3,30 @@ import { serialize } from "v8";
 import Button from "../Components/button";
 import Logo from "../Components/logo";
 
+function StartscreenView(props: any) {
 
-const dummyRecommendedDrinks = [
-  {
-    title: "Vodka redbull",
-    image: "./cocktail.png"
-  },
-  {
-    title: "Martini",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-  {
-    title: "TITLE",
-    image: "./cocktail.png"
-  },
-]
+  function popDrinksCB(cocktail: any) {
+    function itemSelected() {
+        props.onItemSelect(cocktail)
+    }
+    //   function chooseDishACB() {props.clickedDish(dish); window.location.hash = "#details"}
+    return (<a href="#detail" onClick={itemSelected}>
+        <div className="flex flex-col pt-8 items-center text-center">
+            <img src={cocktail.strDrinkThumb} className="w-100 h-40"  ></img>
+            <div >{cocktail.strDrink}</div>
+        </div>
+    </a>
+    )
+}
 
-function StartscreenView() {
     return (
         <>
         <Logo></Logo>
         {/* MOBILE SCREEN */}
         <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral h-200vh w-screen font-Alata">
-            <span className="text-2xl text-black pt-8 pr-4">
-            Welcome to Home Bar
+            <span className="text-2xl text-black pt-8" >
+            Welcome to Home Bar!
+
             </span>
             <div className="grid grid-cols-2 gap-12 justify-end">
             <div>
@@ -72,15 +48,13 @@ function StartscreenView() {
             <span className="text-2xl text-black pt-8 text-center">
             Or choose a one of our most popular drinks
             </span>
-            
             <div className="py-8 w-full content-center">
                 <div className="grid grid-cols-2 pt-8 justify-between"> 
-                  {dummyRecommendedDrinks.map((drink) => (
-                  <div className="flex flex-col pt-8 items-center text-center">
-                    <img src={drink.image} className="w-100 h-40"></img>
+                  {props.popularDrinks.map(popDrinksCB)}
+                  {/*<div className="flex flex-col pt-8 items-center text-center">
+                    {/*<img src={drink.image} className="w-100 h-40"></img>
                     <div key={drink.title}>{drink.title}</div>
-                  </div>
-                ))}
+                  </div>*/}
                 </div>
             </div>
         </section>
