@@ -23,6 +23,7 @@ function searchView(props : any) {
             </input>
 
             <button onClick={searchACB} className="pb-7"><Button text="Search"></Button></button>
+            <Button text="My ingredients"></Button>
             <a href="#ingredients">
             <Button text="Add ingredients"></Button>
             </a>
