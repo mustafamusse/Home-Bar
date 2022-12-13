@@ -45,8 +45,8 @@ function StartscreenView() {
         <Logo></Logo>
         {/* MOBILE SCREEN */}
         <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral h-200vh w-screen font-Alata">
-            <span className="text-2xl text-black pt-8">
-            Welcome to Home Bar!
+            <span className="text-2xl text-black pt-8 pr-4">
+            Welcome to Home Bar
             </span>
             <div className="grid grid-cols-2 gap-12 justify-end">
             <div>
