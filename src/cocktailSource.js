@@ -33,10 +33,14 @@ function searchIngredientById(ingrId) {
         .then(treatHTTPResponseACB).then(transformIngrSearchResultACB)
 }
 
+function showPopularDrinks() {
+    return fetch(apiURL + "popular.php")
+        .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
+}
 
 function filterMultiIngr(ingrList) {
     return fetch(apiURL + "filter.php?i=" + ingrList)
         .then(treatHTTPResponseACB).then(transformCocktailSearchResultACB)
 }
 
-export { searchCocktailByName, searchIngredientByName, searchIngredientById, filterMultiIngr, detailedCocktailSearchByID }
+export { searchCocktailByName, searchIngredientByName, searchIngredientById, filterMultiIngr, detailedCocktailSearchByID, showPopularDrinks }

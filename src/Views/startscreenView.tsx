@@ -39,13 +39,23 @@ const dummyRecommendedDrinks = [
   },
 ]
 
-function StartscreenView() {
+function StartscreenView(props: any) {
+
+  function popDrinksCB(cocktail: any) {
+    return (
+            <div className="flex flex-col pt-8 items-center text-center">
+                <img src={cocktail.strDrinkThumb} className="w-100 h-40"  ></img>
+                <div >{cocktail.strDrink}</div>
+            </div>
+        )
+  }
+
     return (
         <>
         <Logo></Logo>
         {/* MOBILE SCREEN */}
         <section id="mobileScreen" className="flex flex-col lg:hidden items-center bg-neutral h-200vh w-screen font-Alata">
-            <span className="text-2xl text-black pt-8">
+            <span className="text-2xl text-black pt-8" >
             Welcome to Home Bar!
             </span>
             <div className="grid grid-cols-2 gap-12 justify-end">
@@ -68,15 +78,13 @@ function StartscreenView() {
             <span className="text-2xl text-black pt-8 text-center">
             Or choose a one of our most popular drinks
             </span>
-            
             <div className="py-8 w-full content-center">
                 <div className="grid grid-cols-2 pt-8 justify-between"> 
-                  {dummyRecommendedDrinks.map((drink) => (
-                  <div className="flex flex-col pt-8 items-center text-center">
-                    <img src={drink.image} className="w-100 h-40"></img>
+                  {props.popularDrinks.map(popDrinksCB)}
+                  {/*<div className="flex flex-col pt-8 items-center text-center">
+                    {/*<img src={drink.image} className="w-100 h-40"></img>
                     <div key={drink.title}>{drink.title}</div>
-                  </div>
-                ))}
+                  </div>*/}
                 </div>
             </div>
         </section>
