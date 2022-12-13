@@ -11,10 +11,7 @@ function loginView(props : any) {
         <>
         {/* MOBILE SCREEN */}
         <section id="mobileScreen" className="flex flex-col items-center justify-center gap-20 h-screen w-screen bg-neutral py-[23vh] md:py-[6vh] font-Alata">
-            <span className="text-4xl lg:text-6xl text-black">
-            HomeBar
-            </span>
-            <img src="./drink-icon.png" className="w-[65%] md:w-[30%] 2xl:w-[20%]"></img>
+            <img src="./HomebarBlackLogo.png" className="w-[70%] md:w-[70%] 2xl:w-[60%]"></img>
             <div className="flex flex-col justify-center items-center gap-2 lg:gap-5">
               <a href="#start">
               <Button text="Login"></Button>
@@ -28,7 +25,6 @@ function loginView(props : any) {
               </a>
             </div>
         </section>
-        
       </>
     );
   }
