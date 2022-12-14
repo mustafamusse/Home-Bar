@@ -52,7 +52,7 @@ function AddIngredientsView(props: any) {
                     <button className="w-fit h-fit flex items-center text-white bg-light-green py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base font-medium"
                     name={ingredient.strIngredient1}
                     onClick={addToMyIngredientsACB}>
-                      <span>Add</span>
+                      Add
                       <div className="w-[30px] h-[30px]">
                         <PlusSmallIcon></PlusSmallIcon>
                       </div>
