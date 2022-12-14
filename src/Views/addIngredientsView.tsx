@@ -43,24 +43,23 @@ function AddIngredientsView(props: any) {
             </div>
             <div className="h-[10vh] flex justify-center items-center text-white text-lg underline-offset-[8px] underline z-50 bg-dark-green">Choose Ingridents:</div>
           <div className="flex flex-col items-start w-full h-[60vh] text-xl font-semibold overflow-auto">
-          <div className=" px-10 pt-8 w-full z-30">
-            {searchResultArr.map((ingredient: any) => (
-              <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2">
-                <div className="text-white">{ingredient.strIngredient1}</div>
-                  {/*<ToggleButton></ToggleButton>*/}
-                  {
-                    <button className="w-fit h-fit flex items-center text-white bg-light-green py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base font-medium"
-                    name={ingredient.strIngredient1}
-                    onClick={addToMyIngredientsACB}>
-                      Add
-                      <div className="w-[30px] h-[30px]">
-                        <PlusSmallIcon></PlusSmallIcon>
-                      </div>
-                    </button>}
-              </div>
-            ))}
+            <div className=" px-10 pt-8 w-full z-30">
+              {searchResultArr.map((ingredient: any) => (
+                <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2">
+                  <div className="text-white">{ingredient.strIngredient1}</div>
+                    {
+                      <button className=" w-fit h-fit flex items-center text-white bg-light-green focus:bg-slate-500 py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base font-medium"
+                      name={ingredient.strIngredient1}
+                      onClick={addToMyIngredientsACB}>
+                        Add
+                        <div className="w-[30px] h-[30px]">
+                          <PlusSmallIcon></PlusSmallIcon>
+                        </div>
+                      </button>}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
           </div>
         </section>
         
