@@ -26,8 +26,8 @@ function myIngredientsView(props: any) {
             <span>My Ingredients</span>
           </div>
         </div>
-        <a href='#add_ingredients' className="fixed right-7 bottom-12 h-fit w-fit flex justify-center items-center bg-white shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50">
-          <div className="w-[40px] h-[40px] rounded-2xl text-black">
+        <a href='#add_ingredients' className="fixed right-7 bottom-12 h-fit w-fit flex justify-center items-center text-white bg-light-red shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50">
+          <div className="w-[40px] h-[40px] rounded-2xl ">
             <PlusCircleIcon></PlusCircleIcon>
           </div>
           <span className="font-bold text-xl">Ingredients</span>
