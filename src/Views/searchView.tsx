@@ -1,5 +1,6 @@
 import Button from "../Components/button";
 import Logo from "../Components/logo";
+import { FunnelIcon } from '@heroicons/react/24/outline'
 
 function searchView(props : any) {
 
@@ -23,8 +24,14 @@ function searchView(props : any) {
             </input>
 
             <button onClick={searchACB} className="pb-7"><Button text="Search"></Button></button>
-            <button onClick={props.onToggleIngredientFilter} className="pb-7"><Button text="Toggle Filter"></Button></button>
-            <a href="#ingredients">
+             <button onClick={props.onToggleIngredientFilter} className="flex justify-center items-center bg-white shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50">
+              <div className="w-[40px] h-[40px] rounded-2xl text-black">
+                <FunnelIcon></FunnelIcon>
+              </div>
+              <span className="font-bold text-xl">My Ingredients</span>
+            </button>
+
+            <a href="#ingredients" className="pt-4">
             <Button text="Add ingredients"></Button>
             </a>
         </section>
