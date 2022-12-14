@@ -1,7 +1,7 @@
 import Button from "../Components/button";
 import Logo from "../Components/logo";
 import { PlusCircleIcon, ArrowUturnRightIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { FunnelIcon } from '@heroicons/react/24/solid'
+import { FunnelIcon } from '@heroicons/react/24/outline'
 
 
 
@@ -33,7 +33,7 @@ function searchView(props : any) {
               <div className="w-[40px] h-[40px] rounded-2xl text-black">
                 <FunnelIcon></FunnelIcon>
               </div>
-              <span className="font-bold text-xl">My Ingredients</span>
+              <span className="font-bold text-xl">Filter search with my ingredients</span>
             </button>
 
             <a href="#ingredients" className="pt-4">

@@ -51,7 +51,7 @@ export default
     }
 
     return (
-        <div>
+        <div className="bg-neutral h-screen">
             <SearchView onInputChange={setQueryACB} onSearchClick={doSearchACB} onToggleIngredientFilter={toggleIngredientFilter} />
             {promiseNoData(searchResultsPromiseState) ||
                 <SearchResultsView searchResults={filterToggleState? filteredCocktails : allCocktails} onItemSelect={setItemInModel} />}
