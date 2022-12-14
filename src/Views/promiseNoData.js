@@ -1,6 +1,6 @@
 function promiseNoData(promiseState) {
     if (!promiseState.promise)
-        return <div></div>;
+        return <div className="h-screen bg-neutral"></div>;
     else if (!(promiseState.data || promiseState.error))
         return <img src="../../Spinner-3.gif"></img>;
     else if (!promiseState.data && promiseState.error)
