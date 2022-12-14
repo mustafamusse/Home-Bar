@@ -8,17 +8,17 @@ import resolvePromise from "../resolvePromise";
 
 export default
     function SearchPresenter(props) {
+
     const [searchQuery, setQuery] = React.useState({});
     const [searchResultsPromiseState] = React.useState({});
- //   const [detailResultsPromiseState] = React.useState({});
+    const [allCocktails, setAllCocktails] = React.useState({});
     const [filteredCocktails, setFilteredCocktails] = React.useState({});
     const [, reRender] = React.useState();
+    const [filterToggleState, changeFilterToggleState] = React.useState(false);
 
     function componentWasCreatedACB() {
-    //    doSearchACB()
         searchResultsPromiseState.promise = null
         resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
-
     }
 
     React.useEffect(componentWasCreatedACB, []);
@@ -28,28 +28,16 @@ export default
     }
     function doSearchACB() {
         searchResultsPromiseState.promise = searchCocktailByName({ query: searchQuery })
-        resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB).then(
-          //  doDetailedSearchById
-          filterByIngredients
-        )
+        resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState, promiseChangeNotificationACB)
+        .then(setAllAndFilteredResults)
     }
-/*
-    function doDetailedSearchById() {
-        function makePromise(id) {
-            return detailedCocktailSearchByID(id)
-        }
-        var detailsPromiseArray = searchResultsPromiseState.data.map((obj) => makePromise(obj.idDrink))
-        detailResultsPromiseState.promise = (Promise.all(detailsPromiseArray))
-        resolvePromise(detailResultsPromiseState.promise, detailResultsPromiseState, promiseChangeNotificationACB).then(
-            filterByIngredients
-        )
-    }
-*/
-    function filterByIngredients() {
-        setFilteredCocktails(searchResultsPromiseState.data.filter(
-            (obj) => checkAllIngredientsMatch(Object.values(obj), props.model.mySavedIngredientsString)))
 
+    function setAllAndFilteredResults(results) {
+        setAllCocktails(results)
+        setFilteredCocktails(results.filter(
+            (obj) => checkAllIngredientsMatch(Object.values(obj), props.model.mySavedIngredientsString)))  
     }
+    
     function promiseChangeNotificationACB() {
         reRender(new Object())
     }
@@ -58,11 +46,15 @@ export default
         props.model.setDetailCocktail(item)
     }
 
+    function toggleIngredientFilter(){
+        changeFilterToggleState(!filterToggleState)
+    }
+
     return (
         <div>
-            <SearchView onInputChange={setQueryACB} onSearchClick={doSearchACB} />
+            <SearchView onInputChange={setQueryACB} onSearchClick={doSearchACB} onToggleIngredientFilter={toggleIngredientFilter} />
             {promiseNoData(searchResultsPromiseState) ||
-                <SearchResultsView searchResults={filteredCocktails} onItemSelect={setItemInModel} />}
+                <SearchResultsView searchResults={filterToggleState? filteredCocktails : allCocktails} onItemSelect={setItemInModel} />}
         </div>
     )
 }

@@ -23,7 +23,7 @@ function searchView(props : any) {
             </input>
 
             <button onClick={searchACB} className="pb-7"><Button text="Search"></Button></button>
-            <Button text="My ingredients"></Button>
+            <button onClick={props.onToggleIngredientFilter} className="pb-7"><Button text="Toggle Filter"></Button></button>
             <a href="#ingredients">
             <Button text="Add ingredients"></Button>
             </a>
@@ -36,7 +36,6 @@ function searchView(props : any) {
               </span>
               <input onChange={setInputACB} className="border-2 border-black text-center pb-3.5" type="text" placeholder="Search here">
               </input>
-
               <button onClick={searchACB} className="pb-7"><Button text="Search"></Button></button>
               <a href="#ingredients">
               <Button text="Add ingredients"></Button>

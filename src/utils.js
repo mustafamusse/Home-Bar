@@ -14,20 +14,16 @@ function ingrToString(arr) {
 }
 
 function checkAllIngredientsMatch(cocktailAsArray, stringToCompareWith) {
-    console.log(stringToCompareWith)
-    console.log(cocktailAsArray)
+
     var i = 17
     var nmbrOfMisses = 0;
     while (cocktailAsArray[i]) {
-        var regexpr = new RegExp(cocktailAsArray[i],"i")
-        console.log(regexpr)
-        if (!regexpr.test(stringToCompareWith)){
+        var regexpr = new RegExp(cocktailAsArray[i], "i")
+        if (!regexpr.test(stringToCompareWith)) {
             nmbrOfMisses++
-            console.log(cocktailAsArray[i])
         }
         i++
     }
-    console.log(nmbrOfMisses)
     return nmbrOfMisses === 0;
 }
 
