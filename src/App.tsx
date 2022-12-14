@@ -5,6 +5,7 @@ import StartscreenPresenter from "./reactjs/startscreenPresenter";
 import SearchPresenter from "./reactjs/searchPresenter";
 import DetailPresenter from "./reactjs/detailPresenter"
 import RegisterPresenter from "./reactjs/registerPresenter"
+import FilterPresenter from "./reactjs/filterPresenter";
 import Show from "./reactjs/show";
 
 /*VIEWS SHOULD PROBABLY NOT BE RENDERED UNTIL LOGIN IS COMPLETED*/
@@ -18,7 +19,8 @@ function App(props: any) {
     <Show hash="#search"> <SearchPresenter model={props.model} /> </Show>
     <Show hash="#start"> <StartscreenPresenter model={props.model} /> </Show>
     <Show hash="#ingredients"> <MyIngredientsPresenter model={props.model} /> </Show>
-    <Show hash="#add_ingredients"> <AddIngredientsPresenter model={props.model}/> </Show> 
+    <Show hash="#add_ingredients"> <AddIngredientsPresenter model={props.model}/> </Show>
+    <Show hash="#filter"> <FilterPresenter model={props.model}/> </Show> 
   </div>)
 
 }

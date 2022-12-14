@@ -16,13 +16,6 @@ function loginView(props : any) {
               <a href="#start">
               <Button text="Login"></Button>
               </a>
-              <a  href='#register' className="flex flex-col justify-center items-center text-sm hover:underline">
-              <div className="lg:hidden flex flex-col underline items-center">
-                <span>Register new</span>
-                <span>account</span>
-              </div>
-              <div className="hidden lg:block underline text-base"> Register new account</div>
-              </a>
             </div>
         </section>
       </>
