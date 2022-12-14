@@ -14,14 +14,7 @@ function loginView(props : any) {
             <img src="./HomebarBlackLogo.png" className="w-[70%] md:w-[70%] 2xl:w-[60%]"></img>
             <div className="flex flex-col justify-center items-center gap-2 lg:gap-5">
               <a href="#start">
-              <Button text="Login"></Button>
-              </a>
-              <a  href='#register' className="flex flex-col justify-center items-center text-sm hover:underline">
-              <div className="lg:hidden flex flex-col underline items-center">
-                <span>Register new</span>
-                <span>account</span>
-              </div>
-              <div className="hidden lg:block underline text-base"> Register new account</div>
+              <Button text="See Drinks"></Button>
               </a>
             </div>
         </section>
