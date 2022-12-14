@@ -8,9 +8,9 @@ function SearchResultsView(props: any) {
         //   function chooseDishACB() {props.clickedDish(dish); window.location.hash = "#details"}
         return (<a href="#detail" onClick={itemSelected}>
             <div className="flex justify-center pb-4">
-                <div className="flex rounded-2xl w-4/5 bg-red-900 h-40 items-center justify-center">      
+                <div className="flex rounded-2xl w-4/5 bg-red-900 h-40 items-center justify-around">      
                     <img src={cocktail.strDrinkThumb} className="w-100 h-4/5 shadow-lg shadow-black rounded-2xl text-black"></img>
-                    <div className="pl-4 pb-2 flex-row">
+                    <div className="flex-row">
                         <div>{cocktail.strDrink}</div>
                         <div>{cocktail.strCategory}</div>
                         <div>{cocktail.strAlcoholic}</div>

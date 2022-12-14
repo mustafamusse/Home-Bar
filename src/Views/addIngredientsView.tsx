@@ -10,7 +10,7 @@ function AddIngredientsView(props: any) {
   }
 
   function setInputACB(evt: any) {
-    props.onInputChange(evt.target.value);
+    props.onInputChange(evt.target.value);  
   }
 
   function searchACB() {
