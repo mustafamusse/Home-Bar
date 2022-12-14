@@ -24,7 +24,7 @@ function SearchResultsView(props: any) {
     return (
         <div>
             {
-            <div className=" py-8 content-center bg-neutral h-600vh w-screen h-screen justify-between items-center">
+            <div className=" py-8 content-center bg-neutral h-200vh w-screen h-screen justify-between items-center">
                 <div className="lg:hidden pt-8"> 
                     {props.searchResults.map(cocktailImageCB)}            
                 </div>
