@@ -2,6 +2,7 @@
 import Logo from "../Components/logo";
 import SmallBackButton from "../Components/smallBackButton";
 import ToggleButton from "../Components/toggleButton";
+import { PlusSmallIcon } from "@heroicons/react/24/outline";
 
 function AddIngredientsView(props: any) {
 
@@ -49,9 +50,16 @@ function AddIngredientsView(props: any) {
               <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2">
                 <div className="text-white">{ingredient.strIngredient1}</div>
                   {/*<ToggleButton></ToggleButton>*/}
-                  {<button className="w-fit h-fit text-white text-base font-medium"
+                  {
+                    <button className="w-fit h-fit flex items-center text-white bg-light-green py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base font-medium"
                     name={ingredient.strIngredient1}
-                    onClick={addToMyIngredientsACB}>Add</button>}
+                    onClick={addToMyIngredientsACB}>
+                      <span>Add</span>
+                      <div className="w-[30px] h-[30px]">
+                        <PlusSmallIcon></PlusSmallIcon>
+                      </div>
+                    
+                    </button>}
               </div>
             ))}
           </div>
