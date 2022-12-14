@@ -27,7 +27,6 @@ function searchView(props : any) {
             </input>
 
             <button onClick={searchACB} className="pb-7"><Button text="Search"></Button></button>
-          
             <a href='#add_ingredients' className="flex justify-center items-center bg-white shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50">
               <div className="w-[40px] h-[40px] rounded-2xl text-black">
                 <FunnelIcon></FunnelIcon>
