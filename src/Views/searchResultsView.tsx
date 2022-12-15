@@ -28,7 +28,7 @@ function SearchResultsView(props: any) {
                 <div className="lg:hidden pt-8"> 
                     {props.searchResults.map(cocktailImageCB)}            
                 </div>
-                <div className="hidden lg:grid grid-cols-3 bg-neutral item-center justify-between "> 
+                <div className="hidden lg:grid grid-cols-4 bg-neutral item-center justify-between "> 
                 {props.searchResults.map(cocktailImageCB)}
                 </div>
            </div> 

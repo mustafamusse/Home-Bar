@@ -1,5 +1,7 @@
 import Button from "../Components/button";
 import Logo from "../Components/logo";
+import SmallBackButton from "../Components/smallBackButton";
+
 import {FunnelIcon, PencilSquareIcon} from "@heroicons/react/24/outline";
 
 
@@ -45,13 +47,17 @@ function searchView(props : any) {
         
         {/* DESKTOP SCREEN */}
         <section id="desktopScreen" className="hidden lg:flex flex-col w-screen items-center bg-neutral text-3xl font-Alata">
+              
+              <div className="bg-neutral fixed w-full h-fit pt-5">
+                <SmallBackButton text="Back" link="#start"></SmallBackButton>
+              </div>
+
               <span className="text-4xl text-black py-8">
               Search cocktails
               </span>
 
               <div className="flex flex-row content-baseline pb-8">
               <input onChange={setInputACB} className="border-2 border-black text-center pb-3.5 rounded-2xl px-7" type="text" placeholder="Search here">
-
               </input>
               <button onClick={searchACB} className="pl-8 content-baseline"><Button text="Search"></Button></button>
               </div>
@@ -60,11 +66,8 @@ function searchView(props : any) {
               <div className="w-[40px] h-[40px] rounded-2xl text-black">
                 <FunnelIcon></FunnelIcon>
               </div>
-              <span className="font-bold text-xl">Filter search</span>
+              <span className="font-bold text-xl pr-2">Filter search</span>
             </button>
-
-
-
 
               <a href='#ingredients' className="fixed right-7 bottom-12 h-fit w-fit flex justify-center items-center text-white bg-light-red shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50">
               <div className="w-[40px] h-[40px] rounded-2xl ">
