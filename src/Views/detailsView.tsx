@@ -26,14 +26,14 @@ function DetailView(props: any) {
           <img src={props.selectedItem.strDrinkThumb} className="w-40 pt-7 pb-3"></img>
           </div>
 
-          <ul className="space-y-1 max-w-md list-disc list-inside text-white dark:text-white pl-2">
+          <ul className="space-y-1 max-w-md list-disc list-inside text-white dark:text-white pl-8">
           {props.ingredients.map(renderIngr)}
           </ul>
 
           <div className="flex flex-col items-center pt-2 text-white text-xl">
           Instructions
           </div>
-          <div className="flex flex-col items-center text-white dark:text-white pt-4">
+          <div className="flex flex-col items-center text-white dark:text-white pt-4 overflow-auto h-[200px]">
             <p className="w-5/6">
             {props.selectedItem.strInstructions}
             </p>
