@@ -69,7 +69,7 @@ function DetailView(props: any) {
             <img src={props.selectedItem.strDrinkThumb} className="w-40 pt-7 pb-3"></img>
             </div>
 
-          <ul className="space-y-1 max-w-md list-disc list-inside text-white dark:text-white pl-8">
+          <ul className="space-y-1 max-w-md list-disc list-inside text-white dark:text-white pl-14">
           {props.ingredients.map(renderIngr)}
           </ul>
 

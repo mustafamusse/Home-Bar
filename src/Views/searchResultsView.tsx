@@ -10,8 +10,8 @@ function SearchResultsView(props: any) {
             <div className="flex justify-center pb-4">
                 <div className="flex rounded-2xl w-4/5 bg-red-900 h-40 items-center pl-4">      
                     <img src={cocktail.strDrinkThumb} className="w-100 h-32 shadow-lg shadow-black rounded-2xl text-black"></img>
-                    <div className="flex-row pl-4">
-                        <div className="font-bold text-xl underline">{cocktail.strDrink}</div>
+                    <div className="flex-row pl-4 text-white">
+                        <div className="font-bold text-xl underlin">{cocktail.strDrink}</div>
                         <div>{cocktail.strCategory}</div>
                         <div>{cocktail.strAlcoholic}</div>
                     </div>
