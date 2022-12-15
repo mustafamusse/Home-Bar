@@ -1,3 +1,3 @@
-if(window.location.hash != "#login" || "#search" || "#start" || "#ingredients" || "#add_ingredients"){
+if(window.location.hash != "#search" || "#start" || "#ingredients" || "#add_ingredients" || "#filter"){
     window.location.hash = "#login";
 }

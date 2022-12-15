@@ -40,7 +40,7 @@ function StartscreenView(props: any) {
               Search for drinks
             </a>
 
-            <span className="text-2xl text-black pt-5 text-center">
+            <span className="text-2xl md:text-3xl lg:text-4xl text-black pt-5 lg:pb-4 text-center">
             Popular drinks
             </span>
             <div className=" w-full content-center">
