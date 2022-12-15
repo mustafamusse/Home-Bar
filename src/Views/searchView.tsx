@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 
 import {FunnelIcon, PencilSquareIcon} from "@heroicons/react/24/outline";
-
+import {FunnelIcon as FunnelIconSolid} from "@heroicons/react/24/solid";
 
 
 
@@ -84,7 +84,7 @@ function SearchView(props : any) {
             <div onClick={handleClick} className={isActive ? "bg-light-green rounded-3xl" : "bg-light-red rounded-3xl"}>
               <button onClick={props.onToggleIngredientFilter} className="flex justify-center items-center shadow-md rounded-3xl pl-2 pr-2 py-1 gap-1 z-50">
               <div className="w-[40px] h-[40px] rounded-2xl text-white">
-                <FunnelIcon></FunnelIcon>
+                  {isActive ? <FunnelIconSolid></FunnelIconSolid> : <FunnelIcon></FunnelIcon>}
               </div>
               <span className="font-bold text-xl pr-2 text-white">Filter search by ingredients</span>
             </button>
