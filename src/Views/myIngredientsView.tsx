@@ -56,12 +56,12 @@ function myIngredientsView(props: any) {
             </div>
             <div className="mt-[20vh] px-10 pt-8 w-full md:p-20 lg:static lg:h-[80vh] lg:overflow-auto">
               {props.ingrList.map((ingredient: any) => (
-                <div key={ingredient.idIngredient} className="w-full flex justify-between py-1">
+                <div key={ingredient.idIngredient} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
                   <div className="flex gap-4 justify-between w-full">
                     <div>
                       {ingredient.strIngredient}
                     </div>
-                    <div className="w-[24px] h-[24px] text-red-900 pt-[2px]">
+                    <div className="w-[24px] h-[24px] text-light-red pt-[2px] transition-transform hover:scale-[1.20] duration-200 ease-out">
                       <TrashIcon id={ingredient.idIngredient} onClick={removeIngredientsACB}></TrashIcon>
                     </div>
                   </div>
@@ -73,19 +73,19 @@ function myIngredientsView(props: any) {
 
 
         <div className="hidden lg:block bg-neutral border border-l-2 border-light-red w-full mt-[20vh] pt-10 px-10 z-0">
-          <div className="h-[6vh] mt-[4vh] mx-8 bg-white rounded-[1.3rem] flex justify-between items-center pl-5 pr-2 shadow-xl font-semibold">
+          <div className="h-[6vh] mt-[4vh] mx-8 bg-white rounded-[1.3rem] flex justify-between items-center pl-5 pr-2 shadow-xl font-semibold transition-transform hover:scale-[1.02] duration-200 ease-out">
             
-            <input onChange={setInputACB} className="bg-white w-[80%] h-full font-semibold text-xl placeholder-black text-black opacity-50" type="text" placeholder=" Search ingredient:">
+            <input onChange={setInputACB} className="bg-white w-[80%] h-full font-semibold text-xl placeholder-black text-black opacity-50 " type="text" placeholder=" Search ingredient:">
             </input>
               <MagnifyingGlassIcon  className=" opacity-50 w-[10%] h-[50%] "></MagnifyingGlassIcon></div>
           <div className="flex flex-col items-start w-full h-[75vh] text-xl font-semibold overflow-auto">
             <div className="  px-10 pt-8 w-full z-30">
 
               {props.searchResults.map((ingredient: any) => (
-                <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2">
-                  <div className="text-black">{ingredient.strIngredient1}</div>
+                <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
+                  <div className="text-black font-bold font-Alata">{ingredient.strIngredient1}</div>
                   {
-                    <button className={'disabled:bg-slate-200 disabled:text-slate-300 disabled:border-slate-200 w-fit h-fit flex items-center text-white bg-light-green focus:bg-slate-500 py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base font-medium'}
+                    <button className={'disabled:bg-slate-200 disabled:text-slate-300 disabled:border-slate-200 w-fit h-fit flex items-center text-white bg-light-green transition-transform hover:scale-[1.15] duration-200 ease-out py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base'}
                       disabled={ingredient.alreadyInList}
                       name={ingredient.strIngredient1}
                       onClick={addToMyIngredientsACB}>
