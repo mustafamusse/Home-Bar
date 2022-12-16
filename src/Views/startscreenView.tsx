@@ -24,7 +24,7 @@ function StartscreenView(props: any) {
     return (
         <>
         <Logo></Logo>
-        {/* MOBILE SCREEN */}
+        {}
         <section id="mobileScreen" className="flex flex-col items-center bg-neutral h-200vh w-full font-Alata">
             <div className="bg-neutral fixed w-full h-fit pt-5">
               <SmallBackButton text="Back" link="#login"></SmallBackButton>
@@ -49,37 +49,6 @@ function StartscreenView(props: any) {
                 </div>
             </div>
         </section>
-        
-        {/* DESKTOP SCREEN 
-        <section id="desktopScreen" className="hidden lg:flex flex-col w-full h-200vh items-center bg-neutral text-3xl font-Alata">
-        <span className="text-2xl text-black pr-4">
-            Welcome to Home Bar
-            </span>
-            <div className="grid grid-cols-2 gap-12 justify-end">
-            <div>
-            <img src="./cocktail.png" className="w-100 h-20 pr-20"></img>
-            </div>
-            <div>
-            <img src="./cocktail.png" className="w-100 h-20 pl-20"></img>
-            </div>
-            </div>
-            <a className="flex flex-col justify-center items-center text-lg hover:underline py-2">    
-            </a>
-            <a href="#search" className="py-16 font-normal bg-light-red text-white">
-              Search for drinks
-            </a>
-
-            <span className="text-2xl text-black pt-8 text-center">
-            Or choose a one of our most popular drinks
-            </span>
-            
-            <div className="py-8 w-full content-center">
-                <div className="grid grid-cols-3 pt-8 justify-between"> 
-                {props.popularDrinks.map(popDrinksCB)}
-                </div>
-            </div>
-        </section>
-      */}
       </>
     );
   }
