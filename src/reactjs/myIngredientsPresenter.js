@@ -54,7 +54,7 @@ export default
             ingr.alreadyInList = (myIngredients.some(
                 (e) => e.strIngredient === ingr.strIngredient1) ? true : false)
         })
-        console.log(arr)
+        //console.log(arr)
         return arr
     }
 

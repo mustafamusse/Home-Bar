@@ -22,7 +22,6 @@ export default function IngredientPresenter(props) {
     const [apiIngrListPromiseState] = useState({})
 
     useEffect(() => {
-        console.log("haj")
         apiIngrListPromiseState.promise = listIngredients()
         resolvePromise(apiIngrListPromiseState.promise, apiIngrListPromiseState)
     })
