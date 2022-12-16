@@ -42,8 +42,8 @@ function updateFirebaseFromModel(model) {
             firebase.database().ref(REF + "/userIngredients/" + payload.newIngredient.idIngredient).set(payload.newIngredient.idIngredient);
         }
         if (payload.removedIngredient && payload) {
-            console.log(payload.removedIngredient.idIngredient)
-            firebase.database().ref(REF + "/userIngredients/" + payload.removedIngredient.idIngredient).set(null);
+            console.log(payload.removedIngredient)
+            firebase.database().ref(REF + "/userIngredients/" + payload.removedIngredient).set(null);
         }
     }
     model.addObserver(firebaseObserverUpdate);

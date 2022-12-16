@@ -23,13 +23,13 @@ class cocktailModel {
         }
     }
 
-    removeIngredient(item) {
+    removeIngredient(itemId) {
         function isNotSame(obs) {
-            if (obs.idIngredient != item.idIngredient)
+            if (obs.idIngredient != itemId)
                 return true;
         }
         this.mySavedIngredients = this.mySavedIngredients.filter(isNotSame)
-        this.notifyObservers({ removedIngredient: item });
+        this.notifyObservers({ removedIngredient: itemId });
         this.mySavedIngredientsString = ingrToString(this.mySavedIngredients)
     }
 
