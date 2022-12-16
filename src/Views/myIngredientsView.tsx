@@ -58,7 +58,7 @@ function MyIngredientsView(props: any) {
             </div>
             <span className="font-bold text-xl">Ingredients</span>
           </button>
-          <div className="flex flex-col items-start w-full h-fit min-h-[120vh] text-xl font-semibold bg-neutral ">
+          <div className="flex flex-col items-start w-full h-full text-xl font-semibold bg-neutral pt-[20vh]">
             {/* Check if the user has any ingredients added or not, and displays infromation if no ingredients is added. */}
             <div className={props.ingrList.length ? "hidden" : "block"}>
               <div className="fixed top-1/2 left-1/4 flex flex-col justify-center items-start">
@@ -74,7 +74,7 @@ function MyIngredientsView(props: any) {
 
               </div>
             </div>
-            <div className="mt-[20vh] px-10 pt-8 w-full md:p-20 lg:static lg:h-[80vh] lg:overflow-auto">
+            <div className="pt-[20vh] px-10 pt-8 w-full md:p-20 lg:static lg:h-[80vh] lg:overflow-auto">
               {props.ingrList.map((ingredient: any) => (
                 <div key={ingredient.idIngredient} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
                   <div className="flex gap-4 justify-between w-full">
@@ -124,14 +124,16 @@ function MyIngredientsView(props: any) {
           </div>
         </section>
 
-        <div className="hidden lg:block bg-neutral border border-l-2 border-light-red w-full mt-[20vh] pt-10 px-10 z-0">
-          <div className="h-[6vh] mt-[4vh] mx-8 bg-white rounded-[1.3rem] flex justify-between items-center pl-5 pr-2 shadow-xl font-semibold transition-transform hover:scale-[1.02] duration-200 ease-out">
-            
-            <input onChange={setInputACB} className="bg-white w-[80%] h-full font-semibold text-xl placeholder-black text-black opacity-50 " type="text" placeholder=" Search ingredient:">
-            </input>
-              <MagnifyingGlassIcon  className=" opacity-50 w-[10%] h-[50%] "></MagnifyingGlassIcon></div>
-          <div className="flex flex-col items-start w-full h-[75vh] text-xl font-semibold overflow-auto">
-            <div className="  px-10 pt-8 w-full z-30">
+        <div className="hidden lg:block bg-neutral border border-l-2 border-l-light-red w-full h-[100vh] lg:pt-[25vh] pt-10 px-10 z-0">
+          <div className="w-full h-[14%] pt-6 pb-2">
+            <div className="h-full mx-8 bg-white rounded-[1.3rem] flex justify-between items-center pl-5 pr-2 shadow-xl font-semibold transition-transform hover:scale-[1.02] duration-200 ease-out">
+              <input onChange={setInputACB} className="bg-white w-[80%] h-full font-semibold text-xl placeholder-black text-black opacity-50 " type="text" placeholder=" Search ingredient:">
+              </input>
+                <MagnifyingGlassIcon  className=" opacity-50 w-[10%] h-[50%] "></MagnifyingGlassIcon>
+            </div>
+          </div>
+          <div className="flex flex-col items-start w-full h-[86%] text-xl font-semibold overflow-auto">
+            <div className=" px-10 pt-8 w-full z-30">
 
               {props.searchResults.map((ingredient: any) => (
                 <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
