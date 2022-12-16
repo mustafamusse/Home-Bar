@@ -33,7 +33,7 @@ function DetailView(props: any) {
             Instructions
             </div>
             <div className="flex flex-col items-center text-white dark:text-white pt-4 overflow-auto h-[200px]">
-              <p className="w-5/6">
+              <p className="w-5/6 pb-5">
               {props.selectedItem.strInstructions}
               </p>
             </div>
