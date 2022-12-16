@@ -5,7 +5,7 @@ function DetailView(props: any) {
 
   function renderIngr(obj: any, index: any) {
     if (index > 16 && index < 32 && obj)
-      return <li>{obj}</li>
+      return <li key={obj}>{obj}</li>
   }
 
   /*NEEDS TO TRIGGER ON CLICK AND SEND LOGIN CREDENTIALS AS EVENT TARGET */
