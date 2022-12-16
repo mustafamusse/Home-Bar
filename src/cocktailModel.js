@@ -36,7 +36,7 @@ class cocktailModel {
     setDetailCocktail(item) {
         this.detailCocktail = item
         this.notifyObservers({ newDetailCocktail: item })
-        console.log(this.detailCocktail)
+        //console.log(this.detailCocktail)
     }
 
     addObserver(cb) {
