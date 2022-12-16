@@ -77,8 +77,9 @@ function myIngredientsView(props: any) {
               ))}
             </div>
           </div>
-
         </section>
+
+
         <div className="hidden lg:block bg-neutral border border-l-2 border-light-red w-full mt-[20vh] pt-10 px-10 z-0">
           <div className="h-[6vh] mt-[4vh] mx-8 bg-white rounded-[1.3rem] flex justify-between items-center pl-5 pr-2 shadow-xl font-semibold">
               <input onChange={setInputACB} className="bg-white w-[80%] h-full font-semibold text-xl placeholder-black text-black" type="text" placeholder="Search ingredient:">
@@ -92,7 +93,8 @@ function myIngredientsView(props: any) {
                 <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2">
                   <div className="text-black">{ingredient.strIngredient1}</div>
                     {
-                      <button className=" w-fit h-fit flex items-center text-white  bg-light-green focus:bg-slate-500 py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base font-medium"
+                      <button className={'disabled:bg-slate-200 disabled:text-slate-300 disabled:border-slate-200 w-fit h-fit flex items-center text-white bg-light-green focus:bg-slate-500 py-1 pl-[0.8rem] pr-[0.4rem] rounded-3xl text-base font-medium'}
+                      disabled={ingredient.alreadyInList}
                       name={ingredient.strIngredient1}
                       onClick={addToMyIngredientsACB}>
                         Add
@@ -105,6 +107,8 @@ function myIngredientsView(props: any) {
             </div>
           </div>
         </div>
+
+
       </section>
 
     </>

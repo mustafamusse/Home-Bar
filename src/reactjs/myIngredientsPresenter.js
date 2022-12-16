@@ -7,7 +7,7 @@ import resolvePromise from "../resolvePromise";
 
 export default
     function MyIngredientsPresenter(props) {
-    const [ingredients, cpyIngr] = React.useState(props.model.mySavedIngredients)
+    const [myIngredients, cpyIngr] = React.useState(props.model.mySavedIngredients)
 
     function observerACB() {
         cpyIngr(props.model.mySavedIngredients)
@@ -18,7 +18,7 @@ export default
     }
     React.useEffect(wasCreatedACB, []);
 
-    function removeFromIngrListACB(ingrToRemove){
+    function removeFromIngrListACB(ingrToRemove) {
         props.model.removeIngredient(ingrToRemove)
     }
 
@@ -29,21 +29,36 @@ export default
     const [, reRender] = React.useState();
     function componentWasCreatedACB() {
         allIngredientsPromiseState.promise = listIngredients()
-        resolvePromise(allIngredientsPromiseState.promise, allIngredientsPromiseState, promiseChangeNotificationACB).then(setAllIngr)
+        resolvePromise(allIngredientsPromiseState.promise, allIngredientsPromiseState).then(setAllIngr)
     }
     React.useEffect(componentWasCreatedACB, []);
 
-    function setQueryACB(text) {
+    function searchIngrList(text) {
+        console.log(text)
+        var regexpr = new RegExp(text, "i")
+
         function filterByQuery(obj) {
-            var regexpr = new RegExp(text, "i")
             return regexpr.test(obj.strIngredient1) ? true : false
         }
-        if (text === "") {
+        if (text.replaceAll(" ", "") === "") {
             return setAllIngr(allIngredientsPromiseState.data)
         }
         var arr = allIngredients.filter(filterByQuery)
         setAllIngr(arr)
+
     }
+
+    function flagIngr() {
+        var arr = [...allIngredients]
+        arr.forEach((ingr) => {
+            ingr.alreadyInList = (myIngredients.some(
+                (e) => e.strIngredient === ingr.strIngredient1) ? true : false)
+        })
+        console.log(arr)
+        return arr
+    }
+
+
 
     function doSearchACB(ingrToAdd) {
         searchResultsPromiseState.promise = searchIngredientByName({ query: ingrToAdd })
@@ -62,9 +77,9 @@ export default
     return (
         <>
             <MyIngredientsView ingrList={props.model.mySavedIngredients} removeIngr={removeFromIngrListACB}
-            onInputChange={setQueryACB}
-            searchResults={promiseNoData(allIngredientsPromiseState) ? [] : allIngredients}
-            onAddIngr={doSearchACB}/>
+                onInputChange={searchIngrList}
+                searchResults={promiseNoData(allIngredientsPromiseState) ? [] : flagIngr()}
+                onAddIngr={doSearchACB} />
         </>
     )
 }
