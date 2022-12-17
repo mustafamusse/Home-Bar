@@ -80,9 +80,9 @@ function MyIngredientsView(props: any) {
                     <div>
                       {ingredient.strIngredient}
                     </div>
-                    <div className="w-[24px] h-[24px] text-light-red pt-[2px] transition-transform hover:scale-[1.20] duration-200 ease-out">
-                      <TrashIcon id={ingredient.idIngredient} onClick={removeIngredientsACB}></TrashIcon>
-                    </div>
+                    <button onClick={removeIngredientsACB} className="w-[24px] h-[24px] text-light-red pt-[2px] transition-transform hover:scale-[1.20] duration-200 ease-out">
+                      <TrashIcon id={ingredient.idIngredient}></TrashIcon>
+                    </button>
                   </div>
                 </div>
               ))}

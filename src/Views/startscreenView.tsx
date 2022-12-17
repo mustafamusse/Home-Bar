@@ -46,11 +46,11 @@ function StartscreenView(props: any) {
               Search for drinks
             </a>
 
-            <span className="text-2xl font-bold md:text-3xl lg:text-4xl text-black pt-5 pb-8 lg:pb-4 text-center">
+            <span className="text-2xl font-bold md:text-3xl lg:text-4xl text-black pt-5 pb-8 lg:pb-10 text-center">
             Popular drinks:
             </span>
             <div className=" w-full content-center">
-                <div className="grid grid-cols-1 xl:grid-cols-4 2xl:grid-cols-5 justify-between"> 
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 justify-between"> 
                   {props.popularDrinks.map(popDrinksCB)}
                 </div>
             </div>

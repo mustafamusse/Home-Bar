@@ -25,10 +25,10 @@ function SearchResultsView(props: any) {
         <div> 
             {
             <div className=" py-8 content-center bg-neutral h-200vh w-screen h-screen justify-between items-center">
-                <div className="lg:hidden pt-8"> 
+                <div className="lg:hidden sm:grid sm:grid-cols-2 pt-8"> 
                     {props.searchResults.map(cocktailImageCB)}            
                 </div>
-                <div className="hidden lg:grid grid-cols-4 bg-neutral item-center justify-between "> 
+                <div className="hidden lg:grid lg:grid-cols-3 bg-neutral item-center justify-between "> 
                 {props.searchResults.map(cocktailImageCB)}
                 </div>
            </div> 
