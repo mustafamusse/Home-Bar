@@ -40,7 +40,6 @@ function MyIngredientsView(props: any) {
   return (
     <>
       <Logo></Logo>
-      {/* MOBILE SCREEN */}
       <section id="desktopScreen" className="block lg:flex flex-cols-2">
         <section id="mobileScreen" className=" font-Alata w-full">
           <div className="w-full h-[22vh] lg:h-[25vh] fixed left-0 top-0 flex justify-center bg-neutral z-10 shadow-md lg:pb-10">
@@ -74,7 +73,7 @@ function MyIngredientsView(props: any) {
 
               </div>
             </div>
-            <div className=" px-10 pt-8 w-full md:p-20 lg:static h-[100vh] lg:h-[80vh] lg:overflow-auto">
+            <div className=" px-10 w-full lg:px-20 lg:mt-[5vh] lg:py-10 lg:static h-screen lg:h-[75vh] lg:overflow-auto">
               {props.ingrList.map((ingredient: any) => (
                 <div key={ingredient.idIngredient} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
                   <div className="flex gap-4 justify-between w-full">
@@ -90,7 +89,7 @@ function MyIngredientsView(props: any) {
             </div>
           </div>
         </section>
-        <section id="addIngredients" className={showAddIngr ? "lg:hidden fixed w-screen h-screen z-30 flex justify-center items-end top-0" : "hidden"}>
+        <section id="addIngredientsMobile" className={showAddIngr ? "lg:hidden fixed w-screen h-screen z-30 flex justify-center items-end top-0" : "hidden"}>
           <button onClick={handleMenuACB} className="fixed z-30 w-full h-full bg-black opacity-80"></button>
           <button onClick={handleMenuACB} className={showAddIngr ? "fixed w-full h-fit pt-5 text-white top-0 z-40" : "hidden"}>
               <SmallBackButton text="My Ingredients"></SmallBackButton>
@@ -124,7 +123,7 @@ function MyIngredientsView(props: any) {
           </div>
         </section>
 
-        <div className="hidden lg:block bg-neutral border border-l-2 border-l-light-red w-full h-[100vh] lg:pt-[25vh] pt-10 px-10 z-0">
+        <section id="addIngredientsComputer" className="hidden lg:block bg-neutral border border-l-2 border-l-light-red w-full h-[100vh] lg:pt-[25vh] pt-10 px-10 z-0">
           <div className="w-full h-[14%] pt-6 pb-2">
             <div className="h-full mx-8 bg-white rounded-[1.3rem] flex justify-between items-center pl-5 pr-2 shadow-xl font-semibold transition-transform hover:scale-[1.02] duration-200 ease-out">
               <input onChange={setInputACB} className="bg-white w-[80%] h-full font-semibold text-xl placeholder-black text-black opacity-50 " type="text" placeholder=" Search ingredient:">
@@ -152,7 +151,7 @@ function MyIngredientsView(props: any) {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
 
       </section>
