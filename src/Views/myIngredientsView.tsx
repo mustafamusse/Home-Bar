@@ -74,7 +74,7 @@ function MyIngredientsView(props: any) {
 
               </div>
             </div>
-            <div className="pt-[20vh] px-10 pt-8 w-full md:p-20 lg:static lg:h-[80vh] lg:overflow-auto">
+            <div className=" px-10 pt-8 w-full md:p-20 lg:static h-[100vh] lg:h-[80vh] lg:overflow-auto">
               {props.ingrList.map((ingredient: any) => (
                 <div key={ingredient.idIngredient} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
                   <div className="flex gap-4 justify-between w-full">
