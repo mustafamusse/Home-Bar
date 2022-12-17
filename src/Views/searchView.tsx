@@ -28,7 +28,7 @@ function SearchView(props : any) {
         <Logo></Logo>
         <section id="mobileScreen" className="flex flex-col items-center bg-neutral w-screen font-Alata">
 
-            <div className=" text-black fixed w-screen top-0 h-fit pt-5 z-50">
+            <div className=" text-black fixed w-screen top-0 h-fit pt-5 z-30">
               <SmallBackButton text="Back" link="#start"></SmallBackButton>
             </div>            
             <span className="text-2xl lg:text-4xl text-black py-8 h-[20vh] lg: flex items-end font-semibold">
