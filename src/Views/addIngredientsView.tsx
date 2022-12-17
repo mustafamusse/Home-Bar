@@ -1,7 +1,6 @@
 
 import Logo from "../Components/logo";
 import SmallBackButton from "../Components/smallBackButton";
-import ToggleButton from "../Components/toggleButton";
 import { PlusSmallIcon } from "@heroicons/react/24/outline";
 
 function AddIngredientsView(props: any) {
