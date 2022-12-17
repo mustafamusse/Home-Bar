@@ -26,7 +26,7 @@ function StartscreenView(props: any) {
         <Logo></Logo>
         {}
         <section id="mobileScreen" className="flex flex-col items-center bg-neutral h-200vh w-full font-Alata">
-            <div className="bg-neutral fixed w-full h-fit pt-5">
+            <div className=" fixed w-full h-fit pt-5">
               <SmallBackButton text="Back" link="#login"></SmallBackButton>
             </div>
             <span className="text-3xl lg:text-5xl xl:text-7xl text-black pt-[13vh]" >
