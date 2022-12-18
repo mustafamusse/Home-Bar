@@ -1,5 +1,5 @@
 # Homebar
-This application is made to help users create coctail drinks from the comfort of their own home. It allows users to browse and search for specific cocktails, containing their ingredients and instructions to make them. Users are also able to create their own list of ingredients which they have at home, so that they can find drinks that they are able to make from their currently available ingredients. The search function allows users to switch between all drinks matching their search as well as only showing the drinks available based on their ingredients through a filter.
+This application is made to help users create coctail drinks from the comfort of their own home. It allows users to browse and search for specific cocktails, containing their ingredients and instructions for how to make them. Users are also able to create their own list of ingredients which they have at home, so that they can find drinks that they are able to make from their currently available ingredients. The search function allows users to switch between all drinks matching their search as well as only showing the drinks available based on their ingredients through a filter.
 
 ## Find the application here
 https://home-bar-db-27f75.web.app/
