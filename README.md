@@ -1,9 +1,14 @@
 # Homebar
-This application is used to creates coctail drink at the comfort of your own home. The application will guide you through the entire process, by either helping you mix your favorite drinks or create drinks with the ingredients at your home.
-
+This application is made to help users create coctail drinks from the comfort of their own home. It allows users to browse and search for specific cocktails, containing their ingredients and instructions for how to make them. Users are also able to create their own list of ingredients which they have at home, so that they can find drinks that they are able to make from their currently available ingredients. The search function allows users to switch between all drinks matching their search as well as only showing the drinks available based on their ingredients through a filter.
 
 ## Find the application here
 https://home-bar-db-27f75.web.app/
+
+## Setup: 
+Head to directory of the repo and run npm install followed by npm start in the console.
+If not opened automatically, head to http://localhost:3000/
+
+# From Mid-project review:
 
 ## What has been done
 The first installment of the project has been started, we have set it up on firebase and connected the API to our application. We have created a view where a user can search for a drink and the API returns the drinks that are avaliable for that search. Currently, not all views are entirely finished but the funcionality that works is that users can navigate to "search" and look up drinks of their choice.
@@ -21,9 +26,6 @@ These files is what will be shown to the users.
 
 ### Adding Ingredients
 This is the first installment to where the idea is that the user gives ingredients and the application will find drinks that can be done with those ingredients. 
-
-### Login
-This is the first page that will avaliable to the user, the presenter will have logic and make sure that the user is logged in and the views will show you a UI that can be navigated.
 
 ### My Ingredients
 This is also a functionality that will be used in the adding ingredients, just like addingredients this is not implemented yet.
