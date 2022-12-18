@@ -1,6 +1,3 @@
-import { randomInt } from "crypto";
-import { serialize } from "v8";
-import { showPopularDrinks } from "../cocktailSource";
 import { DocumentMagnifyingGlassIcon} from '@heroicons/react/24/outline'
 import Logo from "../Components/logo";
 import SmallBackButton from "../Components/smallBackButton";
@@ -31,7 +28,7 @@ function StartscreenView(props: any) {
         <>
         <Logo></Logo>
         {}
-        <section id="mobileScreen" className="flex flex-col items-center bg-neutral h-200vh w-full font-Alata">
+        <section id="startScreen" className="flex flex-col items-center bg-neutral h-200vh w-full font-Alata">
             <div className=" fixed w-full h-fit pt-5">
               <SmallBackButton text="Back" link="#login"></SmallBackButton>
             </div>

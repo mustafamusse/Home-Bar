@@ -17,7 +17,8 @@ function DetailPresenter(props : any){
 
     return(
         <>
-            <Detailview selectedItem={props.model.detailCocktail} ingredients={Object.values(props.model.detailCocktail)}/>
+            <Detailview selectedItem={props.model.detailCocktail} ingredients={Object.values(props.model.detailCocktail)}
+            previousPageHash={window.location.hash}/>
         </>
     )
 }

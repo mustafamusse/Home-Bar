@@ -1,6 +1,5 @@
 import LoginPresenter from "./reactjs/loginPresenter";
 import MyIngredientsPresenter from "./reactjs/myIngredientsPresenter";
-import AddIngredientsPresenter from "./reactjs/addIngredientsPresenter";
 import StartscreenPresenter from "./reactjs/startscreenPresenter";
 import SearchPresenter from "./reactjs/searchPresenter";
 import DetailPresenter from "./reactjs/detailPresenter"
@@ -15,7 +14,6 @@ function App(props: any) {
     <Show hash="#search"> <SearchPresenter model={props.model} /> </Show>
     <Show hash="#start"> <StartscreenPresenter model={props.model} /> </Show>
     <Show hash="#ingredients"> <MyIngredientsPresenter model={props.model} /> </Show>
-    <Show hash="#add_ingredients"> <AddIngredientsPresenter model={props.model}/> </Show>
   </div>)
 
 }

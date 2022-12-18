@@ -16,7 +16,7 @@ function DetailView(props: any) {
         <section id="detail" className="fixed w-screen h-screen z-20 flex justify-center items-end">
             <div className="fixed z-40 w-full h-full bg-black opacity-80"></div>
             <div className=" text-white fixed w-screen top-0 h-fit pt-5 z-50">
-              <SmallBackButton text="Search" link="#search"></SmallBackButton>
+              <SmallBackButton text={props.previousPageHash.replaceAll("#s", "S")} link={props.previousPageHash}></SmallBackButton>
             </div>
             
             <div className=" z-50 bg-dark-green h-[80vh] w-[94vw] lg:h-[80vh] lg:w-[80vh] rounded-t-[3rem] shadow-2xl font-medium">

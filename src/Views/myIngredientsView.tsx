@@ -7,18 +7,6 @@ import React from "react";
 
 function MyIngredientsView(props: any) {
 
-  const [showAddIngr, setShowAddIngr] = React.useState(false);
-
-  function handleMenuACB(e: any){
-    if(showAddIngr){
-      setShowAddIngr(false);
-    }
-    else{
-      setShowAddIngr(true);
-    }
-    
-  }
-
   function addToMyIngredientsACB(e: any) {
     props.onAddIngr(e.target.name)
   }
@@ -32,10 +20,12 @@ function MyIngredientsView(props: any) {
   }
 
   function searchACB() {
-    props.onSearchClick()
+    props.onAddIngr()
   }
 
-  const searchResultArr = props.searchResults
+  function handleAddIngrClickACB(){
+    props.onAddIngrButtonClick()
+  }
 
   return (
     <>
@@ -43,7 +33,7 @@ function MyIngredientsView(props: any) {
       <section id="desktopScreen" className="block lg:flex flex-cols-2">
         <section id="mobileScreen" className=" font-Alata w-full">
           <div className="w-full h-[22vh] lg:h-[25vh] fixed left-0 top-0 flex justify-center bg-neutral z-10 shadow-md lg:pb-10">
-            <div className={showAddIngr ? "hidden" : "bg-neutral fixed w-full h-fit pt-5"}>
+            <div className={props.addIngrVisibility ? "hidden" : "bg-neutral fixed w-full h-fit pt-5"}>
               <SmallBackButton text="Search" link="#search"></SmallBackButton>
             </div>
             <div className="text-3xl flex lg:flex-cols-2 lg:justify-around justify-center items-end px-2 lg:px-0 pb-6 w-full ">
@@ -51,7 +41,7 @@ function MyIngredientsView(props: any) {
               <span className="hidden lg:block">Add Ingredients</span>
             </div>
           </div>
-          <button onClick={handleMenuACB} className={showAddIngr ? "hidden" : "fixed lg:hidden right-7 bottom-12 h-fit w-fit flex justify-center items-center text-white bg-light-red shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50"}>
+          <button onClick={handleAddIngrClickACB} className={props.addIngrVisibility ? "hidden" : "fixed lg:hidden right-7 bottom-12 h-fit w-fit flex justify-center items-center text-white bg-light-red shadow-md rounded-3xl pl-2 pr-3 py-1 gap-1 z-50"}>
             <div className="w-[40px] h-[40px] rounded-2xl ">
               <PlusCircleIcon></PlusCircleIcon>
             </div>
@@ -89,9 +79,9 @@ function MyIngredientsView(props: any) {
             </div>
           </div>
         </section>
-        <section id="addIngredientsMobile" className={showAddIngr ? "lg:hidden fixed w-screen h-screen z-30 flex justify-center items-end top-0" : "hidden"}>
-          <button onClick={handleMenuACB} className="fixed z-30 w-full h-full bg-black opacity-80"></button>
-          <button onClick={handleMenuACB} className={showAddIngr ? "fixed w-full h-fit pt-5 text-white top-0 z-40" : "hidden"}>
+        <section id="addIngredientsMobile" className={props.addIngrVisibility ? "lg:hidden fixed w-screen h-screen z-30 flex justify-center items-end top-0" : "hidden"}>
+          <button onClick={handleAddIngrClickACB} className="fixed z-30 w-full h-full bg-black opacity-80"></button>
+          <button onClick={handleAddIngrClickACB} className={props.addIngrVisibility ? "fixed w-full h-fit pt-5 text-white top-0 z-40" : "hidden"}>
               <SmallBackButton text="My Ingredients"></SmallBackButton>
           </button>
           <div className=" z-50 bg-dark-green h-[80vh] w-[94vw] rounded-t-[3rem] shadow-2xl  font-medium">
@@ -103,7 +93,7 @@ function MyIngredientsView(props: any) {
             <div className="h-[10vh] flex justify-center items-center text-white text-lg underline-offset-[8px] underline z-50 bg-dark-green">Choose Ingridents:</div>
           <div className="flex flex-col items-start w-full h-[60vh] text-xl font-semibold overflow-auto">
             <div className=" px-10 pt-8 w-full z-30">
-              {searchResultArr.map((ingredient: any) => (
+              {props.searchResults.map((ingredient: any) => (
                 <div key={ingredient.strIngredient1} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
                   <div className="text-white">{ingredient.strIngredient1}</div>
                     {

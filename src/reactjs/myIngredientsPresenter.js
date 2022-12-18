@@ -58,16 +58,22 @@ export default
         return arr
     }
 
+    const [showAddIngr, setShowAddIngr] = React.useState(false);
 
+    function handleMenuACB(){
+        if(showAddIngr){
+          setShowAddIngr(false);
+        }
+        else{
+          setShowAddIngr(true);
+        }
+        
+      }
 
     function doSearchACB(ingrToAdd) {
         searchResultsPromiseState.promise = searchIngredientByName({ query: ingrToAdd })
         return resolvePromise(searchResultsPromiseState.promise, searchResultsPromiseState).then(
             addToMyIngrListACB)
-    }
-
-    function promiseChangeNotificationACB() {
-        reRender(new Object())
     }
 
     function addToMyIngrListACB(ingrToAdd) {
@@ -79,7 +85,9 @@ export default
             <MyIngredientsView ingrList={props.model.mySavedIngredients} removeIngr={removeFromIngrListACB}
                 onInputChange={searchIngrList}
                 searchResults={promiseNoData(allIngredientsPromiseState) ? [] : flagIngr()}
-                onAddIngr={doSearchACB} />
+                onAddIngr={doSearchACB} 
+                onAddIngrButtonClick={handleMenuACB}
+                addIngrVisibility={showAddIngr}/>
         </>
     )
 }
