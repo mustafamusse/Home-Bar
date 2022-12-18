@@ -47,7 +47,7 @@ function MyIngredientsView(props: any) {
             </div>
             <span className="font-bold text-xl">Ingredients</span>
           </button>
-          <div className="flex flex-col items-start w-full h-full text-xl font-semibold bg-neutral pt-[20vh] pb-10 lg:pb-0">
+          <div className="flex flex-col items-start w-full h-full text-xl font-semibold bg-neutral pt-[20vh] lg:pb-0">
             {/* Check if the user has any ingredients added or not, and displays infromation if no ingredients is added. */}
             <div className={props.ingrList.length ? "hidden" : "block"}>
               <div className="fixed top-1/2 left-1/4 flex flex-col justify-center items-start">
@@ -63,7 +63,7 @@ function MyIngredientsView(props: any) {
 
               </div>
             </div>
-            <div className=" px-10 w-full lg:px-20 lg:mt-[5vh] lg:py-10 lg:static h-screen lg:h-[75vh] lg:overflow-auto">
+            <div className=" px-20 w-full lg:px-20 lg:mt-[5vh] pt-[5vh] pb-32 lg:py-10 lg:static h-screen lg:h-[75vh] overflow-auto">
               {props.ingrList.map((ingredient: any) => (
                 <div key={ingredient.idIngredient} className="w-full flex justify-between py-2 transition-transform hover:scale-[1.01] duration-200 ease-out">
                   <div className="flex gap-4 justify-between w-full">
