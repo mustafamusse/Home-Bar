@@ -19,7 +19,7 @@ function DetailView(props: any) {
               <SmallBackButton text={props.previousPageHash.replaceAll("#s", "S")} link={props.previousPageHash}></SmallBackButton>
             </div>
             
-            <div className=" z-50 bg-dark-green h-[80vh] w-[94vw] lg:h-[80vh] lg:w-[80vh] rounded-t-[3rem] shadow-2xl font-medium">
+            <div className="overflow-auto z-50 bg-dark-green h-[80vh] w-[94vw] lg:h-[80vh] lg:w-[80vh] rounded-t-[3rem] shadow-2xl font-medium">
               <div className="h-[10vh] flex justify-center items-center text-white text-lg underline-offset-[8px] underline z-50 bg-dark-green rounded-2xl"> Ingridents & Instructions</div>
               <div className="flex flex-col items-center">
               <img src={props.selectedItem.strDrinkThumb} className="w-40 pt-7 pb-3"></img>
@@ -32,7 +32,7 @@ function DetailView(props: any) {
             <div className="flex flex-col items-center pt-2 text-white text-xl">
             Instructions
             </div>
-            <div className="flex flex-col items-center text-white dark:text-white pt-4 overflow-auto h-[200px]">
+            <div className="flex flex-col items-center text-white dark:text-white pt-4 ">
               <p className="w-5/6 pb-5">
               {props.selectedItem.strInstructions}
               </p>
